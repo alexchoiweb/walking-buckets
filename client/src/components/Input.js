@@ -30,13 +30,14 @@ class Input extends Component {
 
   addNewLog(event) {
     event.preventDefault();
-    if (this.state.makes > this.state.attempts) {
-      return alert(`You can't have more makes than attempts. Unless you're Kobe.`);
+    if (this.state.shotType === '') {
+      return alert('Please select a shot type.');
     } else if (this.state.attempts < 1) {
       return alert('You need more than 0 attempts');
-    } else if (this.state.shotType === '') {
-      return alert('Please select a shot type.');
+    } else if (this.state.makes > this.state.attempts) {
+      return alert(`You can't have more makes than attempts. Unless you're Kobe.`);
     }
+
     let shotLog = this.state.shotLog;
     let newLog = {
       makes: this.state.makes, 
@@ -67,7 +68,7 @@ class Input extends Component {
   render() {
     return(
       <div className="wrapper">
-        <li><a href="/home">Home</a></li>
+        <li><a href="/">Home</a></li>
         <section className="one">
           <a href="/">Done</a>
         </section>
