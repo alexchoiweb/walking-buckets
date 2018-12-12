@@ -31,8 +31,7 @@ class Log extends Component {
       <div className="div-log">
         {this.state.deletedId && <span>-deleted-</span>}
         <span className="logText" id={this.props.log._id}>
-          {this.props.log.makes}/{this.props.log.attempts}
-          {this.props.log.shotType}
+          {this.props.log.makes}/{this.props.log.attempts} {this.props.log.shotType}
         <button onClick={ this.handleClick }>delete</button>
         </span>
       </div>
