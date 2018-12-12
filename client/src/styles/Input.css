@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: grey  ;
+}
+
+.one {
+  height: 10vh;
+  background-color: rgb(58, 58, 58);
+}
+
+.two {
+  height: 70vh;
+  color: gray;
+}
+
+.three {
+  height: 20vh;
+  padding-top: 15px;  
+}
+
+.one a {
+  text-decoration: none;
+  color: #ffcc14;
+  float: right;
+  margin: 20px;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.two p {
+  width: 95vw;
+  margin: 0 auto;
+  color: white;
+}
+
+#display {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.2rem;
+  margin: 0;
+  padding-top: 20px;
+}
+
+.div-select {
+  display: flex;
+  width: 95vw;
+  margin: 0 auto;
+}
+
+.div-select select {
+  width: 100%;
+  -webkit-appearance: none;
+  background-color: rgb(58, 58, 58);
+  height: 3rem!important;
+  border: 2px solid transparent;
+  border-radius: 7px;
+  padding: 0;
+  padding-left: 5px;
+  font-size: 0.9rem;
+  outline: none;
+  color: white;
+  margin: 2px;
+}
+
+.div-makesAttempts {
+  display: flex;
+  width: 95vw;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.div-makesAttempts button {
+  width: 100%;
+  margin: 2px;
+}
+
+.div-makesAttempts input {
+  width: 100%;
+  margin: 2px;
+  text-align: center;
+  -webkit-appearance: none;
+  background-color: rgb(58, 58, 58);
+  height: 3rem!important;
+  border: 2px solid transparent;
+  border-radius: 7px;
+  padding: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  outline: none;
+  color: white;
+  margin: 2px;
+  text-transform: uppercase;
+}
+
+.div-makesAttempts input:focus {
+  border: 2px solid #ffcc14;
+}
+
+.div-makesAttempts input::placeholder {
+  color: white;
+  font-size: 0.8rem;
+}
+
+.div-makesAttempts button {
+  -webkit-appearance: none;
+  background-color: rgb(58, 58, 58);
+  height: 3rem!important;
+  border: 2px solid #ffcc14;
+  border-radius: 7px;
+  padding: 0;
+  font-size: 1.1rem;
+  outline: none;
+  color: white;
+  margin: 2px;
+  color: #ffcc14;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.div-shotLog {
+  width: 80vw;
+  margin: 0 auto;
+  height: 100%;
+  overflow: auto;
+  font-size: 1.3rem;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.div-log {
+  color: white;
+  height: 3rem;
+  border: 2px solid #ffcc14;
+  border-radius: 5px;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.div-log span {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.04rem;
+}
