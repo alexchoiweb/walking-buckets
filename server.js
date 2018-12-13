@@ -36,7 +36,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // Connect to the Database
-const db;
+const db = '';
 if (process.env) {
   db = process.env.mongoURI
 } else {
