@@ -32,7 +32,8 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // Connect to the Database
-const db = process.env.mongoURI || keys.mongoURI
+// const db = process.env.mongoURI || keys.mongoURI
+const db = process.env.mongoURI
 
 mongoose
   .connect(db, { useNewUrlParser: true })
