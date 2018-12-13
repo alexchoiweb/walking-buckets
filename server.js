@@ -9,7 +9,11 @@ const passportLocalMongoose = require('passport-local-mongoose');
 const User = require('./models/User');
 const path = require('path');
 
-const keys = null || require('./config/keys');
+if (process.env) {
+  const keys = null
+} else {
+  const keys = require('./config/keys')
+}
 
 const app = express();
 
@@ -32,8 +36,11 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // Connect to the Database
-// const db = process.env.mongoURI || keys.mongoURI
-const db = process.env.mongoURI
+if (process.env) {
+  const db = process.env.mongoURI
+} else {
+  const db = keys.mongoURI
+}
 
 mongoose
   .connect(db, { useNewUrlParser: true })
