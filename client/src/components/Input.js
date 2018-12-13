@@ -11,13 +11,22 @@ class Input extends Component {
     attempts: 0,
     shotLog: [
     ],
-    user: ''
+    userId: '',
+    username: ''
   }
 
   handleChange = this.handleChange.bind(this);
   addNewLog = this.addNewLog.bind(this);
   
   componentDidMount() {
+    fetch('/api/userId')
+      .then(res => res.json())
+      .then(res => this.setState({ 
+        userId: res.userId,
+        username: res.username
+      }))
+      .catch(error => console.log(error))
+    
     fetch('/api/logs')
       .then(res => res.json())
       .then(data => this.setState({ shotLog: data }))
@@ -40,20 +49,21 @@ class Input extends Component {
 
     let shotLog = this.state.shotLog;
     let newLog = {
+      userId: this.state.userId,
       makes: this.state.makes, 
       attempts: this.state.attempts,
       shotType: this.state.shotType
     }
     shotLog.push(newLog);
 
-    fetch('/api/logs', {  
+    fetch(`/api/logs/${this.state.userId}`, {  
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },  
       body: JSON.stringify({
-        // usernameId: req.user._id,
+        userId: this.state.userId,
         shotType: this.state.shotType,
         makes: this.state.makes,
         attempts: this.state.attempts
@@ -69,16 +79,12 @@ class Input extends Component {
   render() {
     return(
       <div className="wrapper">
-        <li><a href="/">Home</a></li>
         <section className="one">
-          <a href="/">Done</a>
+          <a href="/">Home</a>
+          <a href="/">{this.state.username}</a>
         </section>
         <section className="two">
-          {/* <p>state visualizer</p>
-          <p>shotType: {this.state.shotType}</p>
-          <p>makes: {this.state.makes} </p>
-          <p>attempts: {this.state.attempts}</p>
-          <p id="display">Your Shot Log</p> */}
+          {/* <p id="display">Your Shot Log</p> */}
           <ShotLog 
             shotLog={ this.state.shotLog }
           />

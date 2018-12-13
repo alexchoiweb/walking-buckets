@@ -40,7 +40,7 @@ mongoose
   .catch(err => console.log(err));
 
 // Routes
-const logs = require('./routes/api/logs')
+const logs = require('./routes/api/logs');
 app.use('/api/logs', logs);
 
 // Auth Routes
@@ -85,6 +85,22 @@ app.get('/api/secret', function(req, res) {
     res.json({ isLoggedIn: 'false' })
   }
 })
+
+// app.get('/api/userId', (req, res) => {
+//   res.json({ userId: req.user._id })
+// })
+
+app.get('/api/userId', (req, res) => {
+  res.json({ 
+    userId: req.user._id,
+    username: req.user.username
+  })
+})
+
+
+
+
+
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {

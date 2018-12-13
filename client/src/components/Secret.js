@@ -35,6 +35,7 @@ export default class Secret extends Component {
         <li><a href="/register">Sign Up</a></li>
         <li><a href="/login">Log In</a></li>
         <li><a href="/logout">Log Out</a></li>
+        <li><a href="/input">Input</a></li>
         {this.state.isLoggedIn}
       </div>
     );
