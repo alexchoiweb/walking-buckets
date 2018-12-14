@@ -10,6 +10,11 @@ class Input extends Component {
     makes: 0,
     attempts: 0,
     shotLog: [
+      {makes: 5,
+        attempts: 10,
+        date: "2018-12-14T07:20:42.658Z",
+        shotType: 'Three'      
+      }
     ],
     userId: '',
     username: ''
@@ -81,10 +86,9 @@ class Input extends Component {
       <div className="wrapper">
         <section className="one">
           <a href="/">Home</a>
-          <a href="/">{this.state.username}</a>
+          {/* <p>{this.state.username}</p> */}
         </section>
         <section className="two">
-          {/* <p id="display">Your Shot Log</p> */}
           <ShotLog 
             shotLog={ this.state.shotLog }
           />
@@ -94,7 +98,7 @@ class Input extends Component {
             <div className="div-select">
               <select id="select" name="shotType" onChange={ this.handleChange }>
                 <option select="defaultValue">
-                Select Your Shot Type
+                Shot Type
                 </option>
                 <option>Layup</option>
                 <option>Midrange</option>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Log extends Component {
   state = {
-    deletedLog: ''
+    deletedLog: '',
   }
 
   handleClick = this.handleClick.bind(this);
@@ -30,10 +30,13 @@ class Log extends Component {
     return (
       <div className="div-log">
         {this.state.deletedId && <span>-deleted-</span>}
+        <span className="logDate">{this.props.log.date.slice(5,10)}</span>
         <span className="logText" id={this.props.log._id}>
           {this.props.log.makes}/{this.props.log.attempts} {this.props.log.shotType}
+          
         <button onClick={ this.handleClick }>delete</button>
         </span>
+        <span className="logPercent">{Math.round((this.props.log.makes/this.props.log.attempts)*1000)/10}%</span>
       </div>
     )
   }
