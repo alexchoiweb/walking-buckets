@@ -5,15 +5,17 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const session = require('express-session');
 const LocalStrategy = require('passport-local');
-const passportLocalMongoose = require('passport-local-mongoose');
+// const passportLocalMongoose = require('passport-local-mongoose');
 const User = require('./models/User');
 const path = require('path');
 
-if (process.env) {
-  const keys = null
-} else {
-  const keys = require('./config/keys')
-}
+// if (process.env) {
+//   const keys = null
+// } else {
+//   const keys = require('./config/keys')
+// }
+
+const keys = require('./config/keys');
 
 const app = express();
 
@@ -36,12 +38,14 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // Connect to the Database
-let db = '';
-if (process.env) {
-  db = process.env.mongoURI
-} else {
-  db = keys.mongoURI
-}
+// let db = '';
+// if (process.env) {
+//   db = process.env.mongoURI
+// } else {
+//   db = keys.mongoURI
+// }
+
+const db = keys.mongoURI
 
 mongoose
   .connect(db, { useNewUrlParser: true })
