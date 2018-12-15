@@ -2,15 +2,18 @@
   box-sizing: border-box;
 }
 
-html, body {
+/* html, body {
   margin: 0; 
   height: 100%; 
   overflow: hidden
-}
+} */
 
 body {
   background-color: white;
   color: black;
+  position: fixed; 
+  overflow-y: scroll;
+  width: 100%;
   /* disable scrolling
   position: relative; */
 }
