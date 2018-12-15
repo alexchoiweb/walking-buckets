@@ -2,9 +2,16 @@
   box-sizing: border-box;
 }
 
+/* disable scrolling */
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   background-color: white;
   color: black;
+  /* disable scrolling */
+  position: relative;
 }
 
 /* Remove input type=number spin counter */
