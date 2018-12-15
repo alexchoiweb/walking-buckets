@@ -38,7 +38,9 @@ class Log extends Component {
             {this.props.log.makes}/{this.props.log.attempts} {this.props.log.shotType}
             
           </span>
-          <span id="logPercent">{Math.round((this.props.log.makes/this.props.log.attempts)*1000)/10}%</span>
+          <div className="div-logPercent">
+            <span id="logPercent">{Math.round((this.props.log.makes/this.props.log.attempts)*1000)/10}%</span>
+          </div>
         </div>
         {/* <button onClick={ this.handleClick }>delete</button> */}
       </div>
