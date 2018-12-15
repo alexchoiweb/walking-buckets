@@ -10,14 +10,63 @@ class Input extends Component {
     makes: 0,
     attempts: 0,
     shotLog: [
-      {makes: 5,
+      {
+        makes: 5,
         attempts: 10,
+        date: "2018-12-16T07:20:42.658Z",
+        shotType: 'Three'      
+      },
+      {
+        makes: 56,
+        attempts: 104,
         date: "2018-12-14T07:20:42.658Z",
         shotType: 'Three'      
-      }
+      },
+      {
+        makes: 99,
+        attempts: 256,
+        date: "2018-12-14T07:20:42.658Z",
+        shotType: 'Three'      
+      },
+      {
+        makes: 5,
+        attempts: 10,
+        date: "2018-12-16T07:20:42.658Z",
+        shotType: 'Three'      
+      },
+      {
+        makes: 56,
+        attempts: 104,
+        date: "2018-12-14T07:20:42.658Z",
+        shotType: 'Three'      
+      },
+      {
+        makes: 99,
+        attempts: 256,
+        date: "2018-12-14T07:20:42.658Z",
+        shotType: 'Three'      
+      },
+      {
+        makes: 5,
+        attempts: 10,
+        date: "2018-12-16T07:20:42.658Z",
+        shotType: 'Three'      
+      },
+      {
+        makes: 56,
+        attempts: 104,
+        date: "2018-12-14T07:20:42.658Z",
+        shotType: 'Three'      
+      },
+      {
+        makes: 99,
+        attempts: 256,
+        date: "2018-12-14T07:20:42.658Z",
+        shotType: 'Three'      
+      },
     ],
     userId: '',
-    username: ''
+    username: 'alexthechoi@gmail.com'
   }
 
   handleChange = this.handleChange.bind(this);
@@ -84,9 +133,18 @@ class Input extends Component {
   render() {
     return(
       <div className="wrapper">
-        <section className="one">
-          <a href="/">Home</a>
-          {/* <p>{this.state.username}</p> */}
+        <section className="one navBar">
+            <div className="div-navButton" id="homeButton">
+              <a href='/'><i className="fas fa-home icon"></i></a>
+            </div>
+          <div className="oneFlex">
+            <div className="div-navButton">
+              <i className="fas fa-chart-line icon"></i>
+            </div>
+            <div className="div-navButton">
+              <i className="far fa-list-alt icon"></i>
+            </div>
+          </div>
         </section>
         <section className="two">
           <ShotLog 
