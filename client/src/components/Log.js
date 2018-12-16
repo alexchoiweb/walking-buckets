@@ -30,7 +30,7 @@ class Log extends Component {
     return (
       <div>
         <div className="div-date">
-          <span className="logDate">{this.props.log.date.slice(5,10)}</span>
+          { this.props.log.date && <span className="logDate">{this.props.log.date.slice(5,10)}</span>}
         </div>
         <div className="div-log">
           {this.state.deletedId && <span>-deleted-</span>}

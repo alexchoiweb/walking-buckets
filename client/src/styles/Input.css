@@ -2,20 +2,13 @@
   box-sizing: border-box;
 }
 
-/* html, body {
-  margin: 0; 
-  height: 100%; 
-  overflow: hidden
-} */
-
 body {
   background-color: white;
   color: black;
+  /* disable scrolling */
   position: fixed; 
   overflow-y: scroll;
   width: 100%;
-  /* disable scrolling
-  position: relative; */
 }
 
 /* Remove input type=number spin counter */
@@ -124,7 +117,7 @@ input::-webkit-inner-spin-button {
 }
 
 .div-makesAttempts input:focus {
-  border: 2px solid #ffcc14;
+  border: 2px solid #FF6F66;
 }
 
 .div-makesAttempts input::placeholder {
@@ -167,7 +160,7 @@ input::-webkit-inner-spin-button {
   color: white;
   height: 3rem;
   background-color: #FF6F66;
-  background-image: linear-gradient(to bottom right, #FFCD42, #FF6F66);
+  /* background-image: linear-gradient(to bottom right, #FFCD42, #FF6F66); */
   /* background-image: linear-gradient(to bottom right, #FFCD42, ffcc14); */
   border-radius: 10px;
   width: 88%;

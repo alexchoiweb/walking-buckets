@@ -9,8 +9,6 @@ const LocalStrategy = require('passport-local');
 const User = require('./models/User');
 const path = require('path');
 
-// const keys = require('./config/keys');
-
 const app = express();
 
 // Use BodyParser
@@ -32,8 +30,14 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // Connect to the Database
-// const db = keys.mongoURI
-const db = process.env.mongoURI
+let db = '';
+if (process.env.NODE_ENV === 'production') {
+  db = process.env.mongoURI;
+} else {
+  db = require('./config/keys').mongoURI
+}
+// const db = require('./config/keys').mongoURI;
+// const db = process.env.mongoURI
 
 mongoose
   .connect(db, { useNewUrlParser: true })
