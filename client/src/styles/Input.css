@@ -18,6 +18,10 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+a, a:hover, a:visited, a:link, a:active {
+  text-decoration: none!important;
+}
+
 .one {
   height: 10vh;
   background-color: rgb(58, 58, 58);
@@ -40,6 +44,7 @@ input::-webkit-inner-spin-button {
   align-items: space-between;
   width: 90px;
   float: right;
+  padding-right: 5px;
 }
 
 .div-navButton {
@@ -52,7 +57,8 @@ input::-webkit-inner-spin-button {
 
 #homeButton {
   float: left;
-  padding-left: 10px;
+  padding-left: 15px;
+  color: #FF6F66;
 }
 
 .icon {
@@ -154,7 +160,15 @@ input::-webkit-inner-spin-button {
   border: 1px solid white;
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-end; */
+  /* justify-content: flex-start; */
+  /* align-content: flex-end; */
+}
+
+.div-date {
+  width: 12%;
+  font-size: 0.7rem;
+  display: inline-flex;
+  font-weight: 500;
 }
 
 .div-log {
@@ -168,14 +182,14 @@ input::-webkit-inner-spin-button {
   margin: 3px 0;
   font-size: 1.2rem;
   text-align: center;
-  display: inline-block;
+  display: inline-flex;
+  justify-content: space-around;
+  align-content: center;
 }
 
-.div-date {
-  width: 12%;
-  font-size: 0.7rem;
-  display: inline-block;
-  font-weight: 500;
+.div-logText {
+  padding-left: 20px;
+  width: 300px;
 }
 
 .div-log span {
@@ -188,14 +202,43 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-right: 15px;
 }
 
 #logPercent {
   font-size: 2rem;
+  font-weight: 700;
   float: right;
   margin: 0 auto;
+  padding-top: 5px;
+}
+
+#percentSign {
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding-left: 1.5px;
+  padding-top: 15px;
 }
 
 .logText {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  padding-top: 4px;
   float: left;
+}
+
+#shotTypeText {
+  font-weight: 900;
+  font-size: 0.7rem;
+  letter-spacing: 0.08rem;
+  float:left;
+  padding-top: 5px;
+}
+
+#makesAttemptsText {
+  float: left;
+  font-size: 0.8rem;
+  letter-spacing: 0.09rem;
+  padding-top: 2px;
 }

@@ -135,8 +135,9 @@ class Input extends Component {
       <div className="wrapper">
         <section className="one navBar">
             <div className="div-navButton" id="homeButton">
-              <a href='/'><i className="fas fa-home icon"></i></a>
-            </div>
+              <a href='/'>Walking Bucket <i className="fas fa-basketball-ball"></i></a>
+              {/* <a href='/'><i className="fas fa-home icon"></i></a> */}
+            </div>            
           <div className="oneFlex">
             <div className="div-navButton">
               <i className="fas fa-chart-line icon"></i>

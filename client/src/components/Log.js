@@ -33,13 +33,16 @@ class Log extends Component {
           { this.props.log.date && <span className="logDate">{this.props.log.date.slice(5,10)}</span>}
         </div>
         <div className="div-log">
+          <div className="div-logText">
+            <span className="logText" id={this.props.log._id}>
+              <span id="shotTypeText">{this.props.log.shotType}</span>
+              <br></br>
+              <span id="makesAttemptsText">{this.props.log.makes}/{this.props.log.attempts}</span>
+            </span>
+          </div>
           {this.state.deletedId && <span>-deleted-</span>}
-          <span className="logText" id={this.props.log._id}>
-            {this.props.log.makes}/{this.props.log.attempts} {this.props.log.shotType}
-            
-          </span>
           <div className="div-logPercent">
-            <span id="logPercent">{Math.round((this.props.log.makes/this.props.log.attempts)*1000)/10}%</span>
+            <span id="logPercent">{Math.round((this.props.log.makes/this.props.log.attempts)*1000)/10}</span><span id="percentSign">%</span>
           </div>
         </div>
         {/* <button onClick={ this.handleClick }>delete</button> */}
