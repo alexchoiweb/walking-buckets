@@ -135,12 +135,12 @@ class Input extends Component {
       <div className="wrapper">
         <section className="one navBar">
             <div className="div-navButton" id="homeButton">
-              <a href='/'>Walking Bucket <i className="fas fa-basketball-ball"></i></a>
-              {/* <a href='/'><i className="fas fa-home icon"></i></a> */}
+              {/* <a href='/'>Walking Bucket <i className="fas fa-basketball-ball"></i></a> */}
+              <a href='/'><i className="fas fa-home icon"></i></a>
             </div>            
           <div className="oneFlex">
             <div className="div-navButton">
-              <i className="fas fa-chart-line icon"></i>
+              <i className="fas fa-chart-line icon icon-inactive"></i>
             </div>
             <div className="div-navButton">
               <i className="far fa-list-alt icon"></i>
