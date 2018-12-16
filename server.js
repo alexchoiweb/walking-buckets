@@ -36,7 +36,7 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   db = require('./config/keys').mongoURI
 }
-// const db = require('./config/keys').mongoURI;
+// db = require('./config/keys').mongoURI;
 // const db = process.env.mongoURI
 
 mongoose
