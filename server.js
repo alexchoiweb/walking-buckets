@@ -37,7 +37,7 @@ let db = '';
 //   db = require('./config/keys').mongoURI
 // }
 // db = require('./config/keys').mongoURI;
-const db = process.env.mongoURI
+db = process.env.mongoURI
 
 mongoose
   .connect(db, { useNewUrlParser: true })
