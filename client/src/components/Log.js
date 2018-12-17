@@ -27,7 +27,6 @@ class Log extends Component {
       .then(res => element.innerHTML='')
       .then(res => popUp.classList.remove('button-delete'))
       .then(res => popUp.innerHTML='')
-
       .catch(err => console.log(err)) 
   }
 
@@ -49,11 +48,11 @@ class Log extends Component {
   render () {
     return (
       <div className="div-logAndDelete">
-        <div onClick={this.togglePopUp} id={this.props.log._id}>
+        <div id={this.props.log._id}>
           <div className="div-date">
             { this.props.log.date && <span className="logDate">{this.props.log.date.slice(5,10)}</span>}
           </div>
-          <div className="div-log">
+          <div className="div-log" onClick={this.togglePopUp}>
             <div className="div-logText">
               <span className="logText">
                 <span id="shotTypeText">{this.props.log.shotType}</span>

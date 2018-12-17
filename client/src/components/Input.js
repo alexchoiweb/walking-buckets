@@ -108,9 +108,12 @@ class Input extends Component {
       userId: this.state.userId,
       makes: this.state.makes, 
       attempts: this.state.attempts,
-      shotType: this.state.shotType
+      shotType: this.state.shotType,
+      // date: "2018-12-13T07:36:15.843Z"
+      date: `aaaaa${(parseInt(new Date().getMonth())+1).toString()}-${parseInt(new Date().getDate()+1).toString()}`
     }
-    shotLog.push(newLog);
+
+    shotLog.unshift(newLog);
 
     fetch(`/api/logs/${this.state.userId}`, {  
       method: 'POST',
@@ -122,14 +125,15 @@ class Input extends Component {
         userId: this.state.userId,
         shotType: this.state.shotType,
         makes: this.state.makes,
-        attempts: this.state.attempts
+        attempts: this.state.attempts,
       }),
     });
 
-    this.setState({ makes: 0, attempts: 0, shotLog: shotLog });
     document.getElementById('select').options[0].selected=true;
     document.getElementById('makesButton').value = '';
     document.getElementById('attemptsButton').value = '';
+    this.setState({ makes: 0, attempts: 0, shotLog: shotLog });
+    this.forceUpdate();
   }
 
   render() {
