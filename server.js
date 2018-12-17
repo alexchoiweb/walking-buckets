@@ -36,8 +36,8 @@ let db = '';
 // } else {
 //   db = require('./config/keys').mongoURI
 // }
-// db = require('./config/keys').mongoURI;
-db = process.env.mongoURI
+db = require('./config/keys').mongoURI;
+// db = process.env.mongoURI
 
 mongoose
   .connect(db, { useNewUrlParser: true })

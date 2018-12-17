@@ -11,8 +11,8 @@ class Input extends Component {
     attempts: 0,
     shotLog: [
       {
-        makes: 5,
-        attempts: 10,
+        makes: 98,
+        attempts: 198,
         date: "2018-12-16T07:20:42.658Z",
         shotType: 'Three',
         _id: 5
@@ -24,12 +24,13 @@ class Input extends Component {
         shotType: 'Three',
         _id: 10
       },
-      // {
-      //   makes: 99,
-      //   attempts: 256,
-      //   date: "2018-12-14T07:20:42.658Z",
-      //   shotType: 'Three'      
-      // },
+      {
+        makes: 100,
+        attempts: 214,
+        date: "2018-12-14T07:20:42.658Z",
+        shotType: 'Midrange',
+        _id: 99      
+      },
       // {
       //   makes: 5,
       //   attempts: 10,
@@ -157,7 +158,7 @@ class Input extends Component {
         <section className="one navBar">
             <div className="div-navButton" id="homeButton">
               {/* <a href='/'>Walking Bucket <i className="fas fa-basketball-ball"></i></a> */}
-              <a href='/'><i className="fas fa-home icon"></i></a>
+              <a href='/home'><i className="fas fa-home icon"></i></a>
             </div>            
           <div className="oneFlex">
             <div className="div-navButton">
@@ -170,7 +171,7 @@ class Input extends Component {
         </section>
         <section className="two">
           {this.state.showGraph ? 
-            <span>Graph View Coming Soon!</span> 
+            <span id="graphViewText">Graph View<br/><br/><strong>COMING SOON</strong><br/><br/>-Dev team</span> 
             : 
             <ShotLog shotLog={this.state.shotLog}/>}
         </section>

@@ -20,9 +20,9 @@ class LogIn extends Component {
         </form>
 
         <li><a href="/register">Sign Up</a></li>
-        <li><a href="/login">Log In</a></li>
         <li><a href="/logout">Log Out</a></li>
         <li><a href="/secret">Secret</a></li>
+        <li><a href="/">Input</a></li>
       </div>
     )
   }
