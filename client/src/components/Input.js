@@ -68,13 +68,13 @@ class Input extends Component {
       // },
     ],
     userId: '',
-    username: 'alexthechoi@gmail.com'
+    showGraph: false
   }
 
   handleChange = this.handleChange.bind(this);
   addNewLog = this.addNewLog.bind(this);
-  toggleGraphView = this.toggleGraphView.bind(this);
-  toggleListView = this.toggleListView.bind(this);
+  toggleView = this.toggleView.bind(this);
+  // toggleListView = this.toggleListView.bind(this);
   
   componentDidMount() {
     fetch('/api/userId')
@@ -138,23 +138,17 @@ class Input extends Component {
     this.forceUpdate();
   }
 
-  toggleGraphView() {
-    const graph = document.getElementById('button-graph');
-    const list = document.getElementById('button-list');
-    const two = document.getElementsByClassName('two')[0];
-    graph.classList.remove('icon-inactive');
-    list.classList.add('icon-inactive')
-    // two.innerHTML = '<span>Graph View Coming Soon!</span>'
-  }
-
-  toggleListView() {
-    const graph = document.getElementById('button-graph');
-    const list = document.getElementById('button-list');
-    const two = document.getElementsByClassName('two')[0];
-    graph.classList.add('icon-inactive');
-    list.classList.remove('icon-inactive')
-    console.log('list')
-    // two.innerHTML = "<ShotLog shotLog={this.state.shotLog}/>"
+  toggleView() {
+    const graph = document.getElementById('button-graph')
+    const list = document.getElementById('button-list')
+    if (this.state.showGraph) {
+      graph.classList.add('icon-inactive');
+      list.classList.remove('icon-inactive')
+    } else {
+      graph.classList.remove('icon-inactive');
+      list.classList.add('icon-inactive')
+    }
+    this.setState({ showGraph: !this.state.showGraph})
   }
 
   render() {
@@ -167,17 +161,18 @@ class Input extends Component {
             </div>            
           <div className="oneFlex">
             <div className="div-navButton">
-              <i className="fas fa-chart-line icon icon-inactive" id="button-graph" onClick={this.toggleGraphView}></i>
+              <i className="fas fa-chart-line icon icon-inactive" id="button-graph" onClick={this.toggleView}></i>
             </div>
             <div className="div-navButton">
-              <i className="far fa-list-alt icon" id="button-list" onClick={this.toggleListView}></i>
+              <i className="far fa-list-alt icon" id="button-list" onClick={this.toggleView}></i>
             </div>
           </div>
         </section>
         <section className="two">
-          <ShotLog 
-            shotLog={ this.state.shotLog }
-          />
+          {this.state.showGraph ? 
+            <span>Graph View Coming Soon!</span> 
+            : 
+            <ShotLog shotLog={this.state.shotLog}/>}
         </section>
         <section className="three">
           <form method="POST" action="/api/items">
