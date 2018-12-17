@@ -31,12 +31,12 @@ passport.deserializeUser(User.deserializeUser());
 
 // Connect to the Database
 let db = '';
-if (process.env.NODE_ENV === 'production') {
-  db = process.env.mongoURI;
-} else {
-  db = require('./config/keys').mongoURI
-}
-// db = require('./config/keys').mongoURI;
+// if (process.env.NODE_ENV === 'production') {
+//   db = process.env.mongoURI;
+// } else {
+//   db = require('./config/keys').mongoURI
+// }
+db = require('./config/keys').mongoURI;
 // const db = process.env.mongoURI
 
 mongoose

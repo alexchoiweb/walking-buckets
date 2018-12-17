@@ -1,12 +1,12 @@
 {
   "name": "Walking Bucket",
-  "short_name": "Buckets",
-  "theme_color": "#ffac67",
-  "background_color": "#ffffff",
+  "short_name": "Buckets App",
+  "theme_color": "#f36621",
+  "background_color": "#f36621",
   "display": "standalone",
   "orientation": "portrait",
   "Scope": "/",
-  "start_url": ".",
+  "start_url": "/.",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",

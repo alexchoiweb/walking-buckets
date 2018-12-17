@@ -14,13 +14,15 @@ class Input extends Component {
         makes: 5,
         attempts: 10,
         date: "2018-12-16T07:20:42.658Z",
-        shotType: 'Three'      
+        shotType: 'Three',
+        _id: 5
       },
       {
         makes: 56,
         attempts: 104,
         date: "2018-12-14T07:20:42.658Z",
-        shotType: 'Three'      
+        shotType: 'Three',
+        _id: 10
       },
       // {
       //   makes: 99,
