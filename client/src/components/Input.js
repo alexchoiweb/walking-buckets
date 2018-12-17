@@ -73,6 +73,8 @@ class Input extends Component {
 
   handleChange = this.handleChange.bind(this);
   addNewLog = this.addNewLog.bind(this);
+  toggleGraphView = this.toggleGraphView.bind(this);
+  toggleListView = this.toggleListView.bind(this);
   
   componentDidMount() {
     fetch('/api/userId')
@@ -99,7 +101,7 @@ class Input extends Component {
       return alert('Please select a shot type.');
     } else if (this.state.attempts < 1) {
       return alert('You need more than 0 attempts');
-    } else if (this.state.makes > this.state.attempts) {
+    } else if (this.state.makes < this.state.attempts) {
       return alert(`You can't have more makes than attempts. Unless you're Kobe.`);
     }
 
@@ -136,6 +138,25 @@ class Input extends Component {
     this.forceUpdate();
   }
 
+  toggleGraphView() {
+    const graph = document.getElementById('button-graph');
+    const list = document.getElementById('button-list');
+    const two = document.getElementsByClassName('two')[0];
+    graph.classList.remove('icon-inactive');
+    list.classList.add('icon-inactive')
+    // two.innerHTML = '<span>Graph View Coming Soon!</span>'
+  }
+
+  toggleListView() {
+    const graph = document.getElementById('button-graph');
+    const list = document.getElementById('button-list');
+    const two = document.getElementsByClassName('two')[0];
+    graph.classList.add('icon-inactive');
+    list.classList.remove('icon-inactive')
+    console.log('list')
+    // two.innerHTML = "<ShotLog shotLog={this.state.shotLog}/>"
+  }
+
   render() {
     return(
       <div className="wrapper">
@@ -146,10 +167,10 @@ class Input extends Component {
             </div>            
           <div className="oneFlex">
             <div className="div-navButton">
-              <i className="fas fa-chart-line icon icon-inactive"></i>
+              <i className="fas fa-chart-line icon icon-inactive" id="button-graph" onClick={this.toggleGraphView}></i>
             </div>
             <div className="div-navButton">
-              <i className="far fa-list-alt icon"></i>
+              <i className="far fa-list-alt icon" id="button-list" onClick={this.toggleListView}></i>
             </div>
           </div>
         </section>
