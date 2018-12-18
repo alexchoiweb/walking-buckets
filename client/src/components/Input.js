@@ -100,7 +100,7 @@ class Input extends Component {
     event.preventDefault();
     if (this.state.shotType === '') {
       return alert('Please select a shot type.');
-    } else if (isNan(parseInt(this.state.attempts)) || isNan(parseInt(this.state.makes))) {
+    } else if (isNaN(parseInt(this.state.attempts)) || isNaN(parseInt(this.state.makes))) {
       return alert('Please only input numbers')
     } else if (this.state.attempts < 1) {
       return alert('You need more than 0 attempts');
