@@ -114,6 +114,7 @@ class Input extends Component {
         makes: this.state.makes, 
         attempts: this.state.attempts,
         shotType: this.state.shotType,
+        _id: 99,
         date: `aaaaa${(parseInt(new Date().getMonth())+1).toString()}-${parseInt(new Date().getDate()+1).toString()}`
       }
 
