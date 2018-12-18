@@ -48,7 +48,7 @@ class Log extends Component {
   render () {
     return (
       <div className="div-logAndDelete">
-        <div id={this.props.log._id}>
+        <div className="div-logOuter" id={this.props.log._id}>
           <div className="div-date">
             { this.props.log.date && <span className="logDate">{this.props.log.date.slice(5,10)}</span>}
           </div>

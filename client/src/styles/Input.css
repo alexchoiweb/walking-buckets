@@ -172,11 +172,16 @@ a, a:hover, a:visited, a:link, a:active {
   /* align-content: flex-end; */
 }
 
+.div-logOuter {
+  display: flex;
+}
+
 .div-date {
   width: 12%;
   font-size: 0.7rem;
   display: inline-flex;
   font-weight: 500;
+  margin-top: 12px;
 }
 
 .div-log {

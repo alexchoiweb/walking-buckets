@@ -171,7 +171,7 @@ class Input extends Component {
         </section>
         <section className="two">
           {this.state.showGraph ? 
-            <span id="graphViewText">Graph View<br/><br/><strong>COMING SOON</strong><br/><br/>-Dev team</span> 
+            <span id="graphViewText">Graph View<br/><br/><strong>COMING SOON</strong><br/><br/>-dev team</span> 
             : 
             <ShotLog shotLog={this.state.shotLog}/>}
         </section>
