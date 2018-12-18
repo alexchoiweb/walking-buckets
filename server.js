@@ -31,8 +31,10 @@ passport.deserializeUser(User.deserializeUser());
 
 // Connect to the Database
 let db = '';
-db = require('./config/keys').mongoURI;
-// db = process.env.mongoURI
+db = process.env.mongoURI
+if (db == undefined ) {
+  db = require('./config/keys').mongoURI;
+}
 
 mongoose
   .connect(db, { useNewUrlParser: true })
