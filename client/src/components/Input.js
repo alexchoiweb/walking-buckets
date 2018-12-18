@@ -15,21 +15,21 @@ class Input extends Component {
         attempts: 198,
         date: "2018-12-16T07:20:42.658Z",
         shotType: 'Three',
-        _id: 5
+        _id: 0
       },
       {
         makes: 56,
         attempts: 104,
         date: "2018-12-14T07:20:42.658Z",
         shotType: 'Three',
-        _id: 10
+        _id: 1
       },
       {
         makes: 100,
         attempts: 214,
         date: "2018-12-14T07:20:42.658Z",
         shotType: 'Midrange',
-        _id: 99      
+        _id: 2      
       },
       // {
       //   makes: 5,
@@ -114,7 +114,7 @@ class Input extends Component {
         makes: this.state.makes, 
         attempts: this.state.attempts,
         shotType: this.state.shotType,
-        _id: 99,
+        _id: this.state.shotLog.length.toString(),
         date: `aaaaa${(parseInt(new Date().getMonth())+1).toString()}-${parseInt(new Date().getDate()+1).toString()}`
       }
 
