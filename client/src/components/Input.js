@@ -102,7 +102,7 @@ class Input extends Component {
       return alert('Please select a shot type.');
     } else if (this.state.attempts < 1) {
       return alert('You need more than 0 attempts');
-    } else if (this.state.attempts < this.state.makes) {
+    } else if (this.state.makes > this.state.attempts) {
       return alert(`You can't have more makes than attempts.`);
     } else {
 
