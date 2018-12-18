@@ -102,41 +102,43 @@ class Input extends Component {
       return alert('Please select a shot type.');
     } else if (this.state.attempts < 1) {
       return alert('You need more than 0 attempts');
-    } else if (this.state.makes < this.state.attempts) {
-      return alert(`You can't have more makes than attempts. Unless you're Kobe.`);
-    }
+    } else if (this.state.attempts < this.state.makes) {
+      return alert(`You can't have more makes than attempts.`);
+    } else {
 
-    let shotLog = this.state.shotLog;
-    let newLog = {
-      userId: this.state.userId,
-      makes: this.state.makes, 
-      attempts: this.state.attempts,
-      shotType: this.state.shotType,
-      // date: "2018-12-13T07:36:15.843Z"
-      date: `aaaaa${(parseInt(new Date().getMonth())+1).toString()}-${parseInt(new Date().getDate()+1).toString()}`
-    }
-
-    shotLog.unshift(newLog);
-
-    fetch(`/api/logs/${this.state.userId}`, {  
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },  
-      body: JSON.stringify({
+      let shotLog = this.state.shotLog;
+      let newLog = {
         userId: this.state.userId,
-        shotType: this.state.shotType,
-        makes: this.state.makes,
+        makes: this.state.makes, 
         attempts: this.state.attempts,
-      }),
-    });
+        shotType: this.state.shotType,
+        date: `aaaaa${(parseInt(new Date().getMonth())+1).toString()}-${parseInt(new Date().getDate()+1).toString()}`
+      }
 
-    document.getElementById('select').options[0].selected=true;
-    document.getElementById('makesButton').value = '';
-    document.getElementById('attemptsButton').value = '';
-    this.setState({ makes: 0, attempts: 0, shotLog: shotLog });
-    this.forceUpdate();
+      shotLog.unshift(newLog);
+  
+      fetch(`/api/logs/${this.state.userId}`, {  
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },  
+        body: JSON.stringify({
+          userId: this.state.userId,
+          shotType: this.state.shotType,
+          makes: this.state.makes,
+          attempts: this.state.attempts,
+        }),
+      });
+    
+      // Reset input fields
+      document.getElementById('select').options[0].selected=true;
+      document.getElementById('makesButton').value = '';
+      document.getElementById('attemptsButton').value = '';
+      // Reset state
+      this.setState({ makes: 0, attempts: 0, shotLog: shotLog });
+      // this.forceUpdate();
+    }
   }
 
   toggleView() {

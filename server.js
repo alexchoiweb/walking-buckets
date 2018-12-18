@@ -88,18 +88,12 @@ app.get('/api/secret', function(req, res) {
   }
 })
 
-// app.get('/api/userId', (req, res) => {
-//   res.json({ userId: req.user._id })
-// })
-
 app.get('/api/userId', (req, res) => {
   res.json({ 
     userId: req.user._id,
     username: req.user.username
   })
 })
-
-
 
 
 
