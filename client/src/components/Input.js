@@ -30,7 +30,7 @@ class Input extends Component {
         makes: 100,
         attempts: 214,
         date: "2018-12-14T07:20:42.658Z",
-        shotType: 'Midrange',
+        shotType: 'Three',
         _id: 2      
       },
       // {

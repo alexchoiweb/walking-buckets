@@ -15,7 +15,7 @@ class Chart extends Component {
       },
       options: {
         maintainAspectRatio: false,
-        responsive: false
+        responsive: true
       },
     }
   }
@@ -74,7 +74,14 @@ class Chart extends Component {
     };
     data.options = {
       maintainAspectRatio: false,
-      responsive: true
+      responsive: true,
+      scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero:true
+            }
+        }]
+    }
     };
 
     this.setState({
@@ -87,6 +94,7 @@ class Chart extends Component {
       <div className="div-chart">
         <Line
           data={this.state.chartData}
+          height={400}
           options={{ }} />
       </div>
     )
