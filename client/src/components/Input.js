@@ -17,21 +17,21 @@ class Input extends Component {
         attempts: 198,
         date: "2018-12-16T07:20:42.658Z",
         shotType: 'Three',
-        _id: 0,
+        _id: 100,
       },
       {
         makes: 56,
         attempts: 104,
         date: "2018-12-15T07:20:42.658Z",
         shotType: 'Three',
-        _id: 1
+        _id: 200
       },
       {
         makes: 100,
         attempts: 214,
         date: "2018-12-14T07:20:42.658Z",
         shotType: 'Three',
-        _id: 2      
+        _id: 300     
       },
       // {
       //   makes: 5,
@@ -104,9 +104,9 @@ class Input extends Component {
       return alert('Please select a shot type.');
     } else if (isNaN(parseInt(this.state.attempts)) || isNaN(parseInt(this.state.makes))) {
       return alert('Please only input numbers')
-    } else if (this.state.attempts < 1) {
+    } else if (parseInt(this.state.attempts < 1)) {
       return alert('You need more than 0 attempts');
-    } else if (this.state.makes > this.state.attempts) {
+    } else if (parseInt(this.state.makes) > parseInt(this.state.attempts)) {
       return alert(`You can't have more makes than attempts.`);
     } else {
 
@@ -180,7 +180,7 @@ class Input extends Component {
           {this.state.showGraph ? 
             <Chart shotLog={this.state.shotLog}/>
             // <ChartExample />
-            : 
+            :
             <ShotLog shotLog={this.state.shotLog}/>}
         </section>
         <section className="three">
