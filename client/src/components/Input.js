@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import '../styles/Input.css';
 
+import Chart from './Chart';
 import ShotLog from './ShotLog';
 
 class Input extends Component {
@@ -15,12 +16,12 @@ class Input extends Component {
         attempts: 198,
         date: "2018-12-16T07:20:42.658Z",
         shotType: 'Three',
-        _id: 0
+        _id: 0,
       },
       {
         makes: 56,
         attempts: 104,
-        date: "2018-12-14T07:20:42.658Z",
+        date: "2018-12-15T07:20:42.658Z",
         shotType: 'Three',
         _id: 1
       },
@@ -176,7 +177,7 @@ class Input extends Component {
         </section>
         <section className="two">
           {this.state.showGraph ? 
-            <span id="graphViewText">Graph View<br/><br/><strong>COMING SOON</strong><br/><br/>-dev team</span> 
+            <Chart shotLog={this.state.shotLog}/>
             : 
             <ShotLog shotLog={this.state.shotLog}/>}
         </section>
