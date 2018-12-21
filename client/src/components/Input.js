@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import '../styles/Input.css';
 
 import Chart from './Chart';
+import ChartExample from './ChartExample';
 import ShotLog from './ShotLog';
 
 class Input extends Component {
@@ -178,6 +179,7 @@ class Input extends Component {
         <section className="two">
           {this.state.showGraph ? 
             <Chart shotLog={this.state.shotLog}/>
+            // <ChartExample />
             : 
             <ShotLog shotLog={this.state.shotLog}/>}
         </section>

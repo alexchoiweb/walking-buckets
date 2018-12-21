@@ -4,38 +4,23 @@ import { Line } from 'react-chartjs-2';
 class Chart extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       chartData: {
         labels: [],
         datasets: [{
-            label: 'Shot Percentage',
-            data: [],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
+          label: 'Label for data',
+          data: [],
         }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-    }
+      },
+      options: {
+        maintainAspectRatio: false,
+        responsive: false
+      },
     }
   }
 
+  
   setData = this.setData.bind(this);
 
   componentDidMount() {
@@ -44,24 +29,57 @@ class Chart extends Component {
 
   setData() {
     let data = this.state.chartData;
-    let makes = [];
+
+    let percentagesLayup = [];
+    let percentagesMidrange = [];
+    let percentagesThree = [];
     let dates = [];
 
     this.props.shotLog.map((log) => {
-      makes.push(log.makes)
+      let percent = Math.round((log.makes/log.attempts)*1000)/10
+      if (log.shotType === 'Layup') {
+        return percentagesLayup.unshift(percent);
+      } else if (log.shotType === 'Midrange') {
+        return percentagesMidrange.unshift(percent);
+      } else {
+        return percentagesThree.unshift(percent)
+      }
     })
 
     this.props.shotLog.map((log) => {
       dates.unshift(log.date.slice(5,10))
     })
 
-    data.labels = dates
-    data.datasets[1] = {data: makes}
+    data.labels = dates;
+    data.datasets[0] = {
+        label: 'Layups',
+        data: percentagesLayup,
+        backgroundColor: 'rgb(255, 219, 147)',
+        borderColor: 'rgb(255, 219, 147)',
+        fill: false
+    };
+    data.datasets[1] = {
+      label: 'Midrange',
+      data: percentagesMidrange,
+      backgroundColor: 'rgb(255, 111, 102)',
+      borderColor: 'rgb(255, 111, 102)',
+      fill: false
+    };
+    data.datasets[2] = {
+      label: 'Threes',
+      data: percentagesThree,
+      backgroundColor: 'rgb(104, 152, 255)',
+      borderColor: 'rgb(104, 152, 255)',
+      fill: false
+    };
+    data.options = {
+      maintainAspectRatio: false,
+      responsive: true
+    };
 
     this.setState({
       chartData: data
     })
-    console.log('set state data')
   }
 
   render() {
@@ -69,10 +87,7 @@ class Chart extends Component {
       <div className="div-chart">
         <Line
           data={this.state.chartData}
-          options={{
-            
-          }}
-        />
+          options={{ }} />
       </div>
     )
   }
