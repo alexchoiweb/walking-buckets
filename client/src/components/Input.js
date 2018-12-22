@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import '../styles/Input.css';
 
 import Chart from './Chart';
-import ChartExample from './ChartExample';
+// import ChartExample from './ChartExample';
 import ShotLog from './ShotLog';
 
 class Input extends Component {

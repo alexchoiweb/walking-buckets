@@ -20,7 +20,6 @@ class Chart extends Component {
     }
   }
 
-  
   setData = this.setData.bind(this);
 
   componentDidMount() {
@@ -47,7 +46,7 @@ class Chart extends Component {
     })
 
     this.props.shotLog.map((log) => {
-      dates.unshift(log.date.slice(5,10))
+      return dates.unshift(log.date.slice(5,10))
     })
 
     data.labels = dates;
