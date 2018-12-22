@@ -291,10 +291,10 @@ a, a:hover, a:visited, a:link, a:active {
   width: 80%;
   height: 100%;
 }
-
+/* 
 .chartjs-size-monitor {
 
-}
+} */
 
 .div-chart canvas {
   height: 100%;
