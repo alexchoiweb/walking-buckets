@@ -1,4 +1,4 @@
-var cacheName = 'bucket-cache-v02';
+var cacheName = 'bucket-cache-v03';
 var filesToCache = [
   '../build/index.html',
   '../build/static/css/main.6b68dd1c.chunk.css',
