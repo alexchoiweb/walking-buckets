@@ -1,56 +1,51 @@
-// service-worker.js
+var cacheName = 'bucket-cache-v02';
+var filesToCache = [
+  '../build/index.html',
+  '../build/static/css/main.6b68dd1c.chunk.css',
+  '../build/static/css/main.6b68dd1c.chunk.css.map',
+  '../build/static/js/1.cf1a253b.chunk.js'
+  // '/',
+  // '/index.html',
+  // '/images/icons/icon-72x72.png',
+  // '/images/icons/icon-96x96.png',
+  // '/images/icons/icon-128x128.png',
+  // '/images/icons/icon-144x144.png',
+  // '/images/icons/icon-152x152.png',
+  // '/images/icons/icon-192x192.png',
+  // '/images/icons/icon-384x384.png',
+  // '/images/icons/icon-512x512.png',
+];
 
-// Flag for enabling cache in production
-var doCache = false;
-
-var CACHE_NAME = 'pwa-app-cache';
-
-// Delete old caches
-self.addEventListener('activate', event => {
-  const currentCachelist = [CACHE_NAME];
-  event.waitUntil(
-    caches.keys()
-      .then(keyList =>
-        Promise.all(keyList.map(key => {
-          if (!currentCachelist.includes(key)) {
-            return caches.delete(key);
-          }
-        }))
-      )
+self.addEventListener('install', function(e) {
+  console.log('[ServiceWorker] Install');
+  e.waitUntil(
+    caches.open(cacheName).then(function(cache) {
+      console.log('[ServiceWorker] Caching app shell');
+      return cache.addAll(filesToCache);
+    })
   );
 });
 
-// This triggers when user starts the app
-self.addEventListener('install', function(event) {
-  if (doCache) {
-    event.waitUntil(
-      caches.open(CACHE_NAME)
-        .then(function(cache) {
-          fetch('asset-manifest.json')
-            .then(response => {
-              response.json();
-            })
-            .then(assets => {
-              // We will cache initial page and the main.js
-              // We could also cache assets like CSS and images
-              const urlsToCache = [
-                '/',
-                assets['main.js']
-              ];
-              cache.addAll(urlsToCache);
-            })
-        })
-    );
-  }
+self.addEventListener('activate', function(e) {
+  console.log('[ServiceWorker] Activate');
+  e.waitUntil(
+    caches.keys().then(function(keyList) {
+      return Promise.all(keyList.map(function(key) {
+        if (key !== cacheName) {
+          console.log('[ServiceWorker] Removing old cache', key);
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+  return self.clients.claim();
 });
 
-// Here we intercept request and serve up the matching files
-self.addEventListener('fetch', function(event) {
-  if (doCache) {
-    event.respondWith(
-      caches.match(event.request).then(function(response) {
-        return response || fetch(event.request);
-      })
-    );
-  }
+self.addEventListener('fetch', function(e) {
+  console.log('[ServiceWorker] Fetch', e.request.url);
+  e.respondWith(
+    caches.match(e.request).then(function(response) {
+      return response || fetch(e.request);
+    })
+  );
 });
