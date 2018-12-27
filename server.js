@@ -10,8 +10,6 @@ const User = require('./models/User');
 const path = require('path');
 const jwt = require('jsonwebtoken');
 
-console.log(jwt);
-
 const app = express();
 
 // Use BodyParser

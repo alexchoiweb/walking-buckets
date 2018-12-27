@@ -33,42 +33,6 @@ class Input extends Component {
         shotType: 'Three',
         _id: 300     
       },
-      // {
-      //   makes: 5,
-      //   attempts: 10,
-      //   date: "2018-12-16T07:20:42.658Z",
-      //   shotType: 'Three'      
-      // },
-      // {
-      //   makes: 56,
-      //   attempts: 104,
-      //   date: "2018-12-14T07:20:42.658Z",
-      //   shotType: 'Three'      
-      // },
-      // {
-      //   makes: 99,
-      //   attempts: 256,
-      //   date: "2018-12-14T07:20:42.658Z",
-      //   shotType: 'Three'      
-      // },
-      // {
-      //   makes: 5,
-      //   attempts: 10,
-      //   date: "2018-12-16T07:20:42.658Z",
-      //   shotType: 'Three'      
-      // },
-      // {
-      //   makes: 56,
-      //   attempts: 104,
-      //   date: "2018-12-14T07:20:42.658Z",
-      //   shotType: 'Three'      
-      // },
-      // {
-      //   makes: 99,
-      //   attempts: 256,
-      //   date: "2018-12-14T07:20:42.658Z",
-      //   shotType: 'Three'      
-      // },
     ],
     userId: '',
     showGraph: false
@@ -77,7 +41,6 @@ class Input extends Component {
   handleChange = this.handleChange.bind(this);
   addNewLog = this.addNewLog.bind(this);
   toggleView = this.toggleView.bind(this);
-  // toggleListView = this.toggleListView.bind(this);
   
   componentDidMount() {
     fetch('/api/userId')
@@ -138,13 +101,11 @@ class Input extends Component {
         }),
       });
     
-      // Reset input fields
       document.getElementById('select').options[0].selected=true;
       document.getElementById('makesButton').value = '';
       document.getElementById('attemptsButton').value = '';
-      // Reset state
+
       this.setState({ makes: 0, attempts: 0, shotLog: shotLog });
-      // this.forceUpdate();
     }
   }
 
@@ -168,6 +129,9 @@ class Input extends Component {
             <div className="div-navButton" id="homeButton">
               {/* <a href='/'>Walking Bucket <i className="fas fa-basketball-ball"></i></a> */}
               <a href='/login'><i className="fas fa-home icon"></i></a>
+              {this.state.userId ? <span></span>
+              :
+              <span id="span-pleaseLogIn">Log In</span>}
             </div>            
           <div className="oneFlex">
             <div className="div-navButton">

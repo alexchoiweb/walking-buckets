@@ -65,6 +65,14 @@ a, a:hover, a:visited, a:link, a:active {
   color: #FF6F66;
 }
 
+#span-pleaseLogIn {
+  text-transform: uppercase;
+  color: #ff6f66;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06rem;
+}
+
 .icon {
   font-size: 1.7rem;
   color: #FF6F66;
