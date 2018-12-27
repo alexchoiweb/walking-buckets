@@ -25,7 +25,7 @@ export default class Logout extends Component {
       .then((res) => {
         this.setState({ logoutSuccess: true, messageAPI: res.message });
       })
-      .then(() => this.props.history.push('/'));
+      .then(() => this.props.history.push('/login'));
   }
 
   render() {

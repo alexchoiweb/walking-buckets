@@ -165,7 +165,7 @@ a, a:hover, a:visited, a:link, a:active {
   overflow: auto;
   overflow-x: hidden;
   font-size: 1.3rem;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   display: flex;
   flex-direction: column;
   /* justify-content: flex-start; */

@@ -1,0 +1,206 @@
+
+/* Desktop wide breakpoint */
+@media screen and (min-width: 1366px) {
+
+}
+
+/* Tablet breakpoint */
+@media screen and (min-width: 1024px) {
+  .form-group {
+    width: 40vw!important;
+    margin: 0 auto;
+  }
+
+  .div-submit {
+    width: 25vw!important;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile breakpoint */
+@media screen and (min-width: 375px) {
+
+}
+
+h1 {
+  color: white;
+  letter-spacing: 0.06rem;
+}
+
+.div-register {
+  padding-top: 100px;
+  background-color: #FF6F66;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.div-form {
+  width: 70vw;
+  color: white;
+}
+
+.div-form input {
+  font-weight: 600;
+  border: none;
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  font-size: 1.2rem;
+  width: 100%;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 20px;
+}
+
+.div-form input:focus {
+  color: white;
+  background-color: transparent;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  text-transform: none;
+  color: #ffd0ce;
+}
+
+#button-Submit {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #fff;
+  color: #ff6f66;
+  border: none;
+  width: 70vw;
+  height: 53px;
+  border-radius: 7px;
+}
+
+.div-redirectLogIn {
+  font-size: 1.1rem;
+  color: #ffd0ce
+}
+
+.linkPrimary {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-bottom: 2px solid white;
+  letter-spacing: 0.02em;
+}
+
+.div-logout {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* .signup-head-text {
+  color: white;
+  padding: 10px 0;
+}
+
+.form-group {
+  width: 85vw;
+  margin: 0 auto;
+}
+
+.form-group input {
+  border: none;
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  font-size: 20px;
+  width: 100%;
+}
+
+.form-group input:focus {
+  color: white;
+  background-color: transparent;
+  font-size: 20px;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  text-transform: none;
+ }
+
+.div-underline {
+  border-bottom: 1px solid #ffffff;
+}
+
+.fillWhite {
+  color: #fff;
+}
+
+#inlineBlock {
+  display: inline!important;
+}
+
+.div-submit {
+  width: 85vw;
+  margin: 0 auto;
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonGreen {
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #00CB94;
+  color: #005C43;
+  border: none;
+  width: 80vw;
+  height: 53px;
+}
+
+.div-signIn {
+  width: 85vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.div-signIn p {
+  color: grey;
+  padding-top: 50px;
+}
+
+.linkPrimary {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  border-bottom: 2px solid #00CB94;
+  letter-spacing: 0.02em;
+}
+
+.div-progressIndicator {
+  width: 80vw;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.circle-active {
+  fill: "#00CB94";
+} */
+
+/* auto-complete form styling */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #005C43 inset;
+  box-shadow: none;
+  transition: background-color 5000s ease-in-out 0s;
+}

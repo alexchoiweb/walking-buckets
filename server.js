@@ -49,12 +49,15 @@ app.use('/api/logs', logs);
 app.post('/register', function(req, res) {
   var body = req.body,
              username = body.username,
-             password = body.password;
+             password = body.password,
+             passwordConfirm = body.passwordConfirm;
   User.findOne({ username: username }, function(err, document) {
     if (err) { res.status(500).send('Error ocurred') }
     else {
       if (document) {
-        { res.status(500).send('Username already exists.') }
+        { res.status(500).send('Username already exists - please try again') }
+      } else if (password != passwordConfirm) {
+        { res.status(500).send('Passwords do not match, please try again.')}
       } else {
         User.register(new User({ username: req.body.username }), req.body.password, function(err, user) {
           if(err) {
@@ -69,7 +72,7 @@ app.post('/register', function(req, res) {
 
 app.post('/login', passport.authenticate('local', {
   failureRedirect: '/login',
-  successRedirect: '/secret'
+  successRedirect: '/'
 }), function(req, res) {
   res.send('hey');
 });

@@ -1,28 +1,41 @@
 import React, { Component } from 'react';
 
+import '../styles/Register.css'
+
 class Register extends Component {
   render() {
     return(
-      <div>
-        <h1>Register User</h1>
-        <form method="post" action="/register">
-          <div>
-            <label>Username:</label>
-            <input type="text" name="username" placeholder="Username"/>
-          </div>
-          <div>
-            <label>Password:</label>
-            <input type="password" name="password"/>
-          </div>
-          <div>
-            <input type="submit" value="Sign Up!"/>
-          </div>
+      <div className="div-register">
+        <h1>Register</h1>
+        <div className="div-form">
+          <form method="post" action="/register">
+            <div>
+              <i className="fas fa-user inlineBlock"></i>
+              <input type="text" name="username" placeholder="Email"/>
+            </div>
+            <div>
+              <i className="fas fa-unlock-alt"></i>
+              <input type="password" name="password" placeholder="Password"/>
+            </div>
+            <div>
+              <i className="fas fa-unlock-alt"></i>
+              <input type="password" name="passwordConfirm" placeholder="Confirm Password"/>
+            </div>
+            <div>
+              <input type="submit" value="Sign Up!" id="button-Submit"/>
+            </div>
         </form>
+        </div>
 
-        <li><a href="/login">Log In</a></li>
+        <div className="div-redirectLogIn">
+          <span>Already have an account? <a href="/login" className="linkPrimary">Log In</a></span>
+        </div>
+
+
+        {/* <li><a href="/login">Log In</a></li>
         <li><a href="/logout">Log Out</a></li>
         <li><a href="/secret">Secret</a></li>
-        <li><a href="/">Input</a></li>
+        <li><a href="/">Input</a></li> */}
       </div>
     )
   }
