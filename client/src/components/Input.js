@@ -104,6 +104,8 @@ class Input extends Component {
       return alert('Please select a shot type.');
     } else if (isNaN(parseInt(this.state.attempts)) || isNaN(parseInt(this.state.makes))) {
       return alert('Please only input numbers')
+    } else if (this.state.attempts === '' || this.state.makes === '') {
+      return alert('Please enter makes and attempts')
     } else if (parseInt(this.state.attempts < 1)) {
       return alert('You need more than 0 attempts');
     } else if (parseInt(this.state.makes) > parseInt(this.state.attempts)) {
