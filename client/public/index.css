@@ -8,7 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.div-index {
+.div-header {
   position: relative;
   top: -30px;
   height: 120vh;
