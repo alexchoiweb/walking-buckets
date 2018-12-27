@@ -58,8 +58,10 @@ h1 {
   width: 100%;
   border-bottom: 2px solid #fff;
   margin-bottom: 20px;
-    /* ios button styling */
-    -webkit-appearance: none;
+  border-radius: 0;
+  /* ios button styling remove */
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
 }
 
 .div-form input:focus {

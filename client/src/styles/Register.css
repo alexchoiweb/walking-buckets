@@ -52,6 +52,8 @@ h1 {
   width: 100%;
   border-bottom: 2px solid #fff;
   margin-bottom: 20px;
+  /* ios button styling remove */
+  -webkit-appearance: none;
 }
 
 .div-form input:focus {
