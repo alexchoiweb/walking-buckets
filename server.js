@@ -47,9 +47,6 @@ const logsRouter = require('./routes/api/logs');
 app.use('/api/logs', logsRouter);
 
 // Auth Routes
-// const authRouter = require('./routes/api/auth');
-// app.use('/api/auth', authRouter);
-
 app.post('/api/auth/register', function(req, res) {
   var body = req.body,
              username = body.username,
@@ -75,6 +72,7 @@ app.post('/api/auth/register', function(req, res) {
 })
 
 app.post('/api/auth/login', passport.authenticate('local', {
+
   failureRedirect: '/login',
   successRedirect: '/'
 }), function(req, res) {
