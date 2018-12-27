@@ -8,7 +8,7 @@ class Register extends Component {
       <div className="div-register">
         <h1>Register</h1>
         <div className="div-form">
-          <form method="post" action="/register">
+          <form method="post" action="/api/auth/register">
             <div>
               <i className="fas fa-user inlineBlock"></i>
               <input type="text" name="username" placeholder="Email"/>

@@ -8,6 +8,9 @@ const LocalStrategy = require('passport-local');
 // const passportLocalMongoose = require('passport-local-mongoose');
 const User = require('./models/User');
 const path = require('path');
+const jwt = require('jsonwebtoken');
+
+console.log(jwt);
 
 const app = express();
 
@@ -42,11 +45,14 @@ mongoose
   .catch(err => console.log(err));
 
 // Routes
-const logs = require('./routes/api/logs');
-app.use('/api/logs', logs);
+const logsRouter = require('./routes/api/logs');
+app.use('/api/logs', logsRouter);
 
 // Auth Routes
-app.post('/register', function(req, res) {
+// const authRouter = require('./routes/api/auth');
+// app.use('/api/auth', authRouter);
+
+app.post('/api/auth/register', function(req, res) {
   var body = req.body,
              username = body.username,
              password = body.password,
@@ -70,15 +76,14 @@ app.post('/register', function(req, res) {
   })
 })
 
-app.post('/login', passport.authenticate('local', {
+app.post('/api/auth/login', passport.authenticate('local', {
   failureRedirect: '/login',
   successRedirect: '/'
 }), function(req, res) {
   res.send('hey');
 });
 
-// API Routes
-app.get('/api/logout', function(req, res) {
+app.get('/api/auth/logout', function(req, res) {
   req.logout();
   res.json({ message: 'true facts' });
 })

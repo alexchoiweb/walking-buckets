@@ -20,7 +20,7 @@ export default class Logout extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/logout')
+    fetch('/api/auth/logout')
       .then((res) => res.json())
       .then((res) => {
         this.setState({ logoutSuccess: true, messageAPI: res.message });

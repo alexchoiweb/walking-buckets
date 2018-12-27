@@ -9,7 +9,7 @@ class LogIn extends Component {
         <div className="div-logIn">
           <h1>Log In</h1>
           <div className="div-form">
-            <form method="post" action="/login">
+            <form method="post" action="/api/auth/login">
               <div>
               <i className="fas fa-user inlineBlock"></i>
                 <input type="text" name="username" placeholder="Email"/>
