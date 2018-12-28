@@ -5,7 +5,7 @@ import '../styles/Register.css'
 class Register extends Component {
   render() {
     return(
-      <div className="wrapper">
+      <div className="div-wrapper">
         <div className="div-register fadeIn">
         <h1>Sign Up</h1>
         <div className="div-form">
