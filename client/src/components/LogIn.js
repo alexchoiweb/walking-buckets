@@ -11,7 +11,7 @@ class LogIn extends Component {
           <div className="div-form">
             <form method="post" action="/api/auth/login">
               <div>
-              <i className="fas fa-user inlineBlock"></i>
+                <i className="fas fa-user inlineBlock"></i>
                 <input type="text" name="username" placeholder="Email"/>
               </div>
               <div>
