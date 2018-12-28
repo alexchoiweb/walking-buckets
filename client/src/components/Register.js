@@ -6,7 +6,7 @@ class Register extends Component {
   render() {
     return(
       <div className="div-register">
-        <h1>Register</h1>
+        <h1>Sign Up</h1>
         <div className="div-form">
           <form method="post" action="/api/auth/register">
             <div>

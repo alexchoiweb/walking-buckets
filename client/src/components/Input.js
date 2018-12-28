@@ -129,9 +129,9 @@ class Input extends Component {
             <div className="div-navButton" id="homeButton">
               {/* <a href='/'>Walking Bucket <i className="fas fa-basketball-ball"></i></a> */}
               <a href='/login'><i className="fas fa-home icon"></i></a>
-              {this.state.userId ? <span></span>
+              {this.state.userId ? <span id="span-logOut">Log Out</span>
               :
-              <span id="span-pleaseLogIn">Log In</span>}
+              <span id="span-logIn">Log In</span>}
             </div>            
           <div className="oneFlex">
             <div className="div-navButton">
