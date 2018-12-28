@@ -6,7 +6,7 @@ class LogIn extends Component {
   render() {
     return(
       <div className="div-wrapper">
-        <div className="div-logIn">
+        <div className="div-logIn fadeIn">
           <h1>Log In</h1>
           <div className="div-form">
             <form method="post" action="/api/auth/login">

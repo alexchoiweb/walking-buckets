@@ -5,7 +5,8 @@ import '../styles/Register.css'
 class Register extends Component {
   render() {
     return(
-      <div className="div-register">
+      <div className="wrapper">
+        <div className="div-register fadeIn">
         <h1>Sign Up</h1>
         <div className="div-form">
           <form method="post" action="/api/auth/register">
@@ -31,11 +32,11 @@ class Register extends Component {
           <span>Already have an account? <a href="/login" className="linkPrimary">Log In</a></span>
         </div>
 
-
         {/* <li><a href="/login">Log In</a></li>
         <li><a href="/logout">Log Out</a></li>
         <li><a href="/secret">Secret</a></li>
         <li><a href="/">Input</a></li> */}
+      </div>
       </div>
     )
   }

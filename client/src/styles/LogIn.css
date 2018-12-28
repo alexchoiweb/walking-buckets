@@ -26,6 +26,7 @@
   /* display: flex;
   justify-content: space-around;
   align-items: space-between; */
+  background-color: #FF6F66;
 }
 
 h1 {
@@ -36,7 +37,6 @@ h1 {
 .div-logIn {
   padding-top: 80px;
   height: 100vh;
-  background-color: #FF6F66;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -214,4 +214,41 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #005C43 inset;
   box-shadow: none;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+.fadeIn {
+  -webkit-animation: fadein .5s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein .5s; /* Firefox < 16 */
+   -ms-animation: fadein .5s; /* Internet Explorer */
+    -o-animation: fadein .5s; /* Opera < 12.1 */
+       animation: fadein .5s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }

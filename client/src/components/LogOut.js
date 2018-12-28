@@ -4,9 +4,9 @@ import { withRouter } from 'react-router-dom'
 const Button = withRouter(({ history }) => (
   <button
     type='button'
-    onClick={() => { history.push('/') }}
+    onClick={() => { history.push('/login') }}
   >
-    Back to Home!
+    Back to Login
   </button>
 ))
 
