@@ -1,44 +1,44 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
 
 const User = require('../../models/User');
 
-const app = express();
+router.post('/register', function(req, res) {
+  var body = req.body,
+             username = body.username,
+             password = body.password,
+             passwordConfirm = body.passwordConfirm;
+  User.findOne({ username: username }, function(err, document) {
+    if (err) { res.status(500).send('Error ocurred') }
+    else {
+      if (document) {
+        { res.status(500).send('Username already exists - please try again') }
+      } else if (password != passwordConfirm) {
+        { res.status(500).send('Passwords do not match, please try again.')}
+      } else {
+        User.register(new User({ username: req.body.username }), req.body.password, function(err, user) {
+          if(err) {
+            console.log(err);
+          }
+          return res.redirect('/login');
+        })
+      }
+    }
+  })
+})
 
+router.post('/login', passport.authenticate('local', {
+  failureRedirect: '/secret',
+  successRedirect: '/'
+}), function(req, res) {
+  res.send('hey');
+});
 
+router.get('/logout', function(req, res) {
+  req.logout();
+  res.json({ message: 'true facts' });
+})
 
-// module.exports = function (passport) {
-  // router.post('/signup', function(req, res) {
-  //   var body = req.body,
-  //              username = body.username,
-  //              password = body.password;
-  //   User.findOne({ username: username }, function(err, document) {
-  //     if (err) { res.status(500).send('Error ocurred') }
-  //     else {
-  //       if (document) {
-  //         { res.status(500).send('Username already exists.') }
-  //       } else {
-  //         var record = new User()
-  //           record.username = username;
-  //           record.password = record.hashPassword(password)
-  //           record.save(function(err, user) {
-  //             if (err) {
-  //               res.status(500).send('db error')
-  //             } else {
-  //               res.redirect('/login');
-  //             }
-  //           })
-  //       }
-  //     }
-  //   })
-  // })
-  
-  // router.post('/login', passport.authenticate('local', {
-  //   failureRedirect: '/login',
-  //   successRedirect: '/profile'
-  // }), function(req, res) {
-  //   res.send('hey');
-  // })
-
-  // return router;
-// };
+module.exports = router;

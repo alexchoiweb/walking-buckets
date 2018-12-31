@@ -3,23 +3,54 @@ import React, { Component } from 'react';
 import '../styles/LogIn.css';
 
 class LogIn extends Component {
+  // state = {
+  //   username: '',
+  //   password: '',
+  // }
+
+  // handleChange = this.handleChange.bind(this);
+  // handleSubmit = this.handleSubmit.bind(this);
+
+  // handleChange(event) {
+  //   this.setState({ [event.target.name]: event.target.value });
+  // }
+
+  // handleSubmit() {
+  //   fetch(`/api/auth/login`, {
+  //     method: 'POST',
+  //     headers: {
+  //       Accept: 'application/json',
+  //       'Content-Type': 'application/json',
+  //     },  
+  //     body: JSON.stringify({
+  //       username: this.state.username,
+  //       password: this.state.password
+  //     })
+  //   })
+  // }
+
   render() {
     return(
       <div className="div-wrapper">
         <div className="div-logIn fadeIn">
           <h1>Log In</h1>
           <div className="div-form">
-            <form method="post" action="/api/auth/login">
+            <form method="POST" action="/api/auth/login">
+            {/* <form> */}
               <div>
                 <i className="fas fa-user inlineBlock"></i>
-                <input type="text" name="username" placeholder="Email"/>
+                {/* <input type="text" name="username" placeholder="Email" onChange={this.handleChange}/> */}
+                <input type="text" name="username" placeholder="Email" />
               </div>
               <div>
                 <i className="fas fa-unlock-alt"></i>
-                <input type="password" name="password" placeholder="Password"/>
+                {/* <input type="password" name="password" placeholder="Password" onChange={this.handleChange}/> */}
+                <input type="password" name="password" placeholder="Password" />
+
               </div>
               <div>
-                <input type="submit" value="Log In" id="button-Submit"/>
+                {/* <input type="submit" value="Log In" id="button-Submit" onClick={this.handleSubmit}/> */}
+                <input type="submit" value="Log In" id="button-Submit" />
               </div>
             </form>
           </div>
