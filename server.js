@@ -89,13 +89,13 @@ app.use('/api/auth', authRouter);
 
 // Fetch Routes
 
-app.get('/api/secret', function(req, res) {
-  if (req.isAuthenticated()) {
-    res.json({ isLoggedIn: 'true' })
-  } else {
-    res.json({ isLoggedIn: 'false' })
-  }
-})
+// app.get('/api/secret', function(req, res) {
+//   if (req.isAuthenticated()) {
+//     res.json({ isLoggedIn: 'true' })
+//   } else {
+//     res.json({ isLoggedIn: 'false' })
+//   }
+// })
 
 app.get('/api/userId', (req, res) => {
   res.json({ 

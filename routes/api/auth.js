@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-const LocalStrategy = require('passport-local');
 
 const User = require('../../models/User');
 
@@ -39,6 +38,14 @@ router.post('/login', passport.authenticate('local', {
 router.get('/logout', function(req, res) {
   req.logout();
   res.json({ message: 'true facts' });
+})
+
+router.get('/secret', function(req, res) {
+  if (req.isAuthenticated()) {
+    res.json({ isLoggedIn: 'true' })
+  } else {
+    res.json({ isLoggedIn: 'false' })
+  }
 })
 
 module.exports = router;

@@ -21,7 +21,7 @@ export default class Secret extends Component {
   // }
 
   componentDidMount() {
-    fetch('/api/secret')
+    fetch('/api/auth/secret')
       .then((res) => res.json())
       .then((res) => {
         this.setState({ isLoggedIn: res.isLoggedIn })
