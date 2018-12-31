@@ -29,7 +29,7 @@ router.post('/register', function(req, res) {
 })
 
 router.post('/login', passport.authenticate('local', {
-  failureRedirect: '/secret',
+  failureRedirect: '/login',
   successRedirect: '/'
 }), function(req, res) {
   res.send('hey');

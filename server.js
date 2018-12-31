@@ -16,13 +16,16 @@ const app = express();
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Passport
+// Use Cookie-session
 app.use(session({
-  secret: 'secretySecret',
-  saveUninitialized: false,
-  resave: false
+  maxAge: 24*60*60*1000,
+  keys: [require('./config/keys').session.cookieKey]
+  // secret: 'secretySecret',
+  // saveUninitialized: false,
+  // resave: false
 }));
 
+// Use Passport
 app.use(passport.initialize());
 app.use(passport.session());
 
