@@ -19,10 +19,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Use Cookie-session
 app.use(session({
   maxAge: 24*60*60*1000,
-  keys: process.env.cookieKey || [require('./config/keys').session.cookieKey]
-  // secret: 'secretySecret',
-  // saveUninitialized: false,
-  // resave: false
+  keys: process.env.cookieKey || [require('./config/keys').session.cookieKey],
+  secret: 'secretySecret',
+  saveUninitialized: false,
+  resave: false
 }));
 
 // Use Passport
