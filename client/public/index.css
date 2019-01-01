@@ -8,7 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.div-header {
+/* .div-header {
   position: relative;
   top: -30px;
   height: 120vh;
@@ -19,4 +19,4 @@ h2 {
   padding-top: 200px;
   color: white;
   text-align: center;
-}
+} */

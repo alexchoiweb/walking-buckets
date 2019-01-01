@@ -1,0 +1,39 @@
+.div-one {
+  width: 100vw;
+}
+
+.div-header {
+  background-color: none;
+  width: 50vw;
+  color: black;
+  display: flex;
+  align-content: center;
+  height: 200px;
+}
+
+#headerText {
+  font-size: 2rem;
+  text-align: center;
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+#headerText2 {
+  font-size: 1.3rem;
+  display: block;
+  text-align: center;
+  background-color: green;
+}
+
+#button-headerbutton {
+  display: block;
+}
+
+.div-headerImage {
+  width: 40vw;
+  background-color: brown;
+  height: 200px;
+  display: block;
+}

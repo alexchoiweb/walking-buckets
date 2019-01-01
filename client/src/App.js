@@ -9,6 +9,8 @@ import LogOut from './components/LogOut';
 import Register from './components/Register';
 import Secret from './components/Secret';
 
+import Landing from './components/Landing/Landing';
+
 class App extends Component {
   render() {
     return (
@@ -20,6 +22,8 @@ class App extends Component {
           <Route path='/logout'   component = { LogOut } />
           <Route path='/register' component = { Register } />
           <Route path='/secret'   component = { Secret } />
+
+          <Route path='/landing'  component = { Landing } />
         </div>
       </BrowserRouter>
     );
