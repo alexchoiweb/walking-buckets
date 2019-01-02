@@ -4,31 +4,36 @@
 
 .div-header {
   background-color: none;
-  width: 50vw;
+  width: 100vw;
   color: black;
   display: flex;
   align-content: center;
   height: 200px;
 }
 
+.div-headerText {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
 #headerText {
   font-size: 2rem;
   text-align: center;
   background-color: pink;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
 }
 
 #headerText2 {
-  font-size: 1.3rem;
+  font-size: 1rem;
   display: block;
   text-align: center;
   background-color: green;
 }
 
 #button-headerbutton {
-  display: block;
+  width: 100px;
 }
 
 .div-headerImage {
@@ -36,4 +41,32 @@
   background-color: brown;
   height: 200px;
   display: block;
+}
+
+.div-navbar {
+  background-color: #EFEFEF;
+  width: 100vw;
+  height: 50px;
+}
+
+.div-navbarGroupLeft {
+  background-color: teal;
+  width: 40vw;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.div-navbar a {
+  margin: 0 15px;
+  color: #979797;
+  font-size: 0.9rem;
+}
+
+.div-navbarGroupRight {
+    float: right;
+  width: 30vw;
+  display: inline-flex;
+  justify-content: flex-end;
+  margin-right: 30 px;
+  background-color: teal;
 }
