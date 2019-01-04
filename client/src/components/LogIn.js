@@ -4,32 +4,6 @@ import { Link } from 'react-router-dom';
 import '../styles/LogIn.css';
 
 class LogIn extends Component {
-  // state = {
-  //   username: '',
-  //   password: '',
-  // }
-
-  // handleChange = this.handleChange.bind(this);
-  // handleSubmit = this.handleSubmit.bind(this);
-
-  // handleChange(event) {
-  //   this.setState({ [event.target.name]: event.target.value });
-  // }
-
-  // handleSubmit() {
-  //   fetch(`/api/auth/login`, {
-  //     method: 'POST',
-  //     headers: {
-  //       Accept: 'application/json',
-  //       'Content-Type': 'application/json',
-  //     },  
-  //     body: JSON.stringify({
-  //       username: this.state.username,
-  //       password: this.state.password
-  //     })
-  //   })
-  // }
-
   render() {
     return(
       <div className="div-wrapper">

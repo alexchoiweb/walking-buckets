@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Consumer } from '../context';
 
 import '../styles/Input.css';
 
 import Chart from './Chart';
 // import ChartExample from './ChartExample';
+
 import ShotLog from './ShotLog';
 
 class Input extends Component {
@@ -125,67 +127,75 @@ class Input extends Component {
 
   render() {
     return(
-      <div className="wrapper">
-        <section className="one navBar">
-            <div className="div-navButton" id="homeButton">
-              {this.state.userId ?
-                <div>
-                  <Link to="/logout"><i className="fas fa-home icon"></i></Link>
-                  <p id="span-logOut">Log Out</p>
+      <Consumer>
+        { value => {
+          const { shotLog, userId, username } = value;
+          // this.setState({ shotLog:shotLog });
+          return(
+            <div className="wrapper">
+              <section className="one navBar">
+                  <div className="div-navButton" id="homeButton">
+                    {this.state.userId ?
+                      <div>
+                        <Link to="/logout"><i className="fas fa-home icon"></i></Link>
+                        <p id="span-logOut">Log Out</p>
+                      </div>
+                    :
+                      <div>
+                        <Link to="login"><i className="fas fa-home icon"></i></Link>
+                        <p id="span-logIn">Log In</p>
+                      </div>
+                    }        
+                  </div>            
+                <div className="oneFlex">
+                  <div className="div-navButton">
+                    <i className="fas fa-chart-line icon icon-inactive" id="button-graph" onClick={this.toggleView}></i>
+                  </div>
+                  <div className="div-navButton">
+                    <i className="far fa-list-alt icon" id="button-list" onClick={this.toggleView}></i>
+                  </div>
                 </div>
-              :
-                <div>
-                  <Link to="login"><i className="fas fa-home icon"></i></Link>
-                  <p id="span-logIn">Log In</p>
-                </div>
-              }        
-            </div>            
-          <div className="oneFlex">
-            <div className="div-navButton">
-              <i className="fas fa-chart-line icon icon-inactive" id="button-graph" onClick={this.toggleView}></i>
+              </section>
+              <section className="two">
+                {this.state.showGraph ? 
+                  <Chart shotLog={this.state.shotLog}/>
+                  // <ChartExample />
+                  :
+                  <ShotLog shotLog={this.state.shotLog}/>}
+              </section>
+              <section className="three">
+                <form method="POST" action="/api/items">
+                  <div className="div-select">
+                    <select id="select" name="shotType" onChange={ this.handleChange }>
+                      <option select="defaultValue">
+                      Shot Type
+                      </option>
+                      <option>Layup</option>
+                      <option>Midrange</option>
+                      <option>Three</option>
+                    </select>
+                  </div>
+                  <div className="div-makesAttempts">
+                    <input id="makesButton"
+                          type="number"
+                          placeholder="Makes"
+                          name="makes"
+                          onChange={ this.handleChange }>
+                    </input>
+                    <input id="attemptsButton"
+                          type="number"
+                          placeholder="Attempts"
+                          name="attempts"
+                          onChange={ this.handleChange }>
+                    </input>
+                    <button onClick={ this.addNewLog }>Log</button>
+                  </div>
+                </form>
+              </section>
             </div>
-            <div className="div-navButton">
-              <i className="far fa-list-alt icon" id="button-list" onClick={this.toggleView}></i>
-            </div>
-          </div>
-        </section>
-        <section className="two">
-          {this.state.showGraph ? 
-            <Chart shotLog={this.state.shotLog}/>
-            // <ChartExample />
-            :
-            <ShotLog shotLog={this.state.shotLog}/>}
-        </section>
-        <section className="three">
-          <form method="POST" action="/api/items">
-            <div className="div-select">
-              <select id="select" name="shotType" onChange={ this.handleChange }>
-                <option select="defaultValue">
-                Shot Type
-                </option>
-                <option>Layup</option>
-                <option>Midrange</option>
-                <option>Three</option>
-              </select>
-            </div>
-            <div className="div-makesAttempts">
-              <input id="makesButton"
-                     type="number"
-                     placeholder="Makes"
-                     name="makes"
-                     onChange={ this.handleChange }>
-              </input>
-              <input id="attemptsButton"
-                     type="number"
-                     placeholder="Attempts"
-                     name="attempts"
-                     onChange={ this.handleChange }>
-              </input>
-              <button onClick={ this.addNewLog }>Log</button>
-            </div>
-          </form>
-        </section>
-      </div>
+          )
+        }}
+      </Consumer>
     )
   }
 }
