@@ -37,7 +37,7 @@ class Input extends Component {
         _id: 300     
       },
     ],
-    userId: '',
+    // userId: '',
     showGraph: false
   }
 

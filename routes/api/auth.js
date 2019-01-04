@@ -1,14 +1,15 @@
 const express = require('express');
-const router = express.Router();
+const jwt = require('jsonwebtoken')
 const passport = require('passport');
+const router = express.Router();
 
 const User = require('../../models/User');
 
 router.post('/register', function(req, res) {
   var body = req.body,
-             username = body.username,
-             password = body.password,
-             passwordConfirm = body.passwordConfirm;
+      username = body.username,
+      password = body.password,
+      passwordConfirm = body.passwordConfirm;
   User.findOne({ username: username }, function(err, document) {
     if (err) { res.status(500).send('Error ocurred') }
     else {
@@ -32,8 +33,24 @@ router.post('/login', passport.authenticate('local', {
   failureRedirect: '/login',
   successRedirect: '/'
 }), function(req, res) {
-  res.send('hey');
+  res.send('hello');
 });
+
+// router.post('/login', passport.authenticate('local', {
+//   failureRedirect: '/login',
+//   successRedirect: '/'
+// }), function(req, res) {
+//   const token = jwt.sign({
+//     email: req.body.username
+//   }, 'secretyKeykey', {
+//     expiresIn: "1h"
+//   });
+//   console.log('log in success');
+//   return res.status(200).json({
+//     message: 'Auth successful',
+//     token: token
+//   })
+// });
 
 router.get('/logout', function(req, res) {
   req.logout();

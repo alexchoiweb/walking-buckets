@@ -2,11 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-const session = require('express-session');
+const session = require('cookie-session');
 const LocalStrategy = require('passport-local');
 const User = require('./models/User');
-const path = require('path');
-const jwt = require('jsonwebtoken');
+// const path = require('path');
+// const jwt = require('jsonwebtoken');
 // const keys = require('./config/keys')
 // const passportLocalMongoose = require('passport-local-mongoose');
 
@@ -18,11 +18,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Use Cookie-session
 app.use(session({
-  // maxAge: 24*60*60*1000,
-  // keys: process.env.cookieKey || [require('./config/keys').session.cookieKey],
-  secret: 'secretySecret',
-  saveUninitialized: false,
-  resave: false
+  name:'session',
+  key: ['keysecret'],
+  
+  maxAge: 24*60*60*1000,
+  keys: process.env.cookieKey || [require('./config/keys').session.cookieKey],
+
+
+  // secret: 'secretySecret',
+  // saveUninitialized: false,
+  // resave: false,
 }));
 
 // Use Passport

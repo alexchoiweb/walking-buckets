@@ -18,7 +18,6 @@ class LogIn extends Component {
               <div>
                 <i className="fas fa-unlock-alt"></i>
                 <input type="password" name="password" placeholder="Password" />
-
               </div>
               <div>
                 <input type="submit" value="Log In" id="button-Submit" />
@@ -27,7 +26,6 @@ class LogIn extends Component {
           </div>
 
           <div className="div-redirectSignUp">
-            {/* <span>Not a user yet? <a href="/register" className="linkPrimary">Sign Up Here</a></span> */}
             <span>Not a user yet? <Link to="/register" className="linkPrimary">Sign Up Here</Link></span>
             <br />
             <div className="div-logout">
