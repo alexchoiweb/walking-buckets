@@ -18,15 +18,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Use Cookie-session
 app.use(session({
-  // name:'session',
-
-  // maxAge: 24*60*60*1000,
-  // keys: process.env.cookieKey || [require('./config/keys').session.cookieKey],
-
-
   secret: 'secretySecret',
   saveUninitialized: false,
   resave: false,
+  // name:'session',
+  // maxAge: 24*60*60*1000,
+  // keys: process.env.cookieKey || [require('./config/keys').session.cookieKey],
 }));
 
 // Use Passport
@@ -57,60 +54,12 @@ app.use('/api/logs', logsRouter);
 const authRouter = require('./routes/api/auth');
 app.use('/api/auth', authRouter);
 
-// app.post('/api/auth/register', function(req, res) {
-//   var body = req.body,
-//              username = body.username,
-//              password = body.password,
-//              passwordConfirm = body.passwordConfirm;
-//   User.findOne({ username: username }, function(err, document) {
-//     if (err) { res.status(500).send('Error ocurred') }
-//     else {
-//       if (document) {
-//         { res.status(500).send('Username already exists - please try again') }
-//       } else if (password != passwordConfirm) {
-//         { res.status(500).send('Passwords do not match, please try again.')}
-//       } else {
-//         User.register(new User({ username: req.body.username }), req.body.password, function(err, user) {
-//           if(err) {
-//             console.log(err);
-//           }
-//           return res.redirect('/login');
-//         })
-//       }
-//     }
-//   })
-// })
-
-// app.post('/api/auth/login', passport.authenticate('local', {
-
-//   failureRedirect: '/login',
-//   successRedirect: '/'
-// }), function(req, res) {
-//   res.send('hey');
-// });
-
-// app.get('/api/auth/logout', function(req, res) {
-//   req.logout();
-//   res.json({ message: 'true facts' });
-// })
-
-// Fetch Routes
-
-// app.get('/api/secret', function(req, res) {
-//   if (req.isAuthenticated()) {
-//     res.json({ isLoggedIn: 'true' })
-//   } else {
-//     res.json({ isLoggedIn: 'false' })
-//   }
-// })
-
 app.get('/api/userId', (req, res) => {
-  if (req.user_id === undefined) {
-    return console.log('No user logged in')
+  if (req.user._id === undefined) {
+    return console.log('req.user._id is undefined')
   } else {
     res.json({ 
-      userId: req.user._id,
-      username: req.user.username
+      userId: req.user._id
     })
   }
 })

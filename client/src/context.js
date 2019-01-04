@@ -7,23 +7,22 @@ export class Provider extends Component {
     hi: 'hello',
     shotLog: [],
     userId: '',
-    username: '',
   }
 
-  componentDidMount() {
-    fetch('/api/userId')
-      .then(res => res.json())
-      .then(res => this.setState({ 
-        userId: res.userId,
-        username: res.username
-      }))
-      .catch(error => console.log(error))
+  // componentDidMount() {
+  //   fetch('/api/userId')
+  //     .then(res => res.json())
+  //     .then(res => this.setState({ 
+  //       userId: res.userId,
+  //       username: res.username
+  //     }))
+  //     .catch(error => console.log(error))
   
-    fetch('/api/logs')
-      .then(res => res.json())
-      .then(data => this.setState({ shotLog: data }))
-      .catch(error => console.log(error))
-  }
+  //   fetch('/api/logs')
+  //     .then(res => res.json())
+  //     .then(data => this.setState({ shotLog: data }))
+  //     .catch(error => console.log(error))
+  // }
 
   render() {
     return (

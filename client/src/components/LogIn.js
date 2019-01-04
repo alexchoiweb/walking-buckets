@@ -24,13 +24,15 @@ class LogIn extends Component {
               </div>
             </form>
           </div>
-
           <div className="div-redirectSignUp">
             <span>Not a user yet? <Link to="/register" className="linkPrimary">Sign Up Here</Link></span>
             <br />
             <div className="div-logout">
               <Link to="/logout" className="linkPrimary">Log Out</Link>
             </div>
+            {/* <div className="div-input">
+              <Link to="/" className="linkPrimary">Try App with Dummy Data</Link>
+            </div> */}
           </div>
         </div>
       </div>

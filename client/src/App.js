@@ -9,25 +9,23 @@ import Secret   from './components/Secret';
 
 import Landing  from './components/Landing/Landing';
 
-import { Provider } from './context';
+// import { Provider } from './context';
 
 class App extends Component {
   render() {
     return (
-      <Provider>
-        <BrowserRouter>
-          <div>
-            <Route exact path='/'   component = { Input } />
+      <BrowserRouter>
+        <div>
+          <Route exact path='/'   component = { Input } />
 
-            <Route path='/login'    component = { LogIn } />
-            <Route path='/logout'   component = { LogOut } />
-            <Route path='/register' component = { Register } />
-            <Route path='/secret'   component = { Secret } />
+          <Route path='/login'    component = { LogIn } />
+          <Route path='/logout'   component = { LogOut } />
+          <Route path='/register' component = { Register } />
+          <Route path='/secret'   component = { Secret } />
 
-            <Route path='/landing'  component = { Landing } />
-          </div>
-        </BrowserRouter>
-      </Provider>
+          <Route path='/landing'  component = { Landing } />
+        </div>
+      </BrowserRouter>
     );
   }
 }

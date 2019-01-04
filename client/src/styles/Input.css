@@ -9,15 +9,15 @@
 
 /* Tablet breakpoint */
 @media screen and (min-width: 1024px) {
-  .div-chart{
+  /* .div-chart{
     width: 80%;
-    height: 100px!important;
+    height: 50%!important;
   }
 
   .div-chart canvas {
-    height: 100px!important;
+    height: 50%!important;
     width: 100%;
-  }
+  } */
 }
 
 /* Mobile breakpoint */

@@ -37,7 +37,7 @@ class Input extends Component {
         _id: 300     
       },
     ],
-    // userId: '',
+    userId: '',
     showGraph: false
   }
 
@@ -49,8 +49,7 @@ class Input extends Component {
     fetch('/api/userId')
       .then(res => res.json())
       .then(res => this.setState({ 
-        userId: res.userId,
-        username: res.username
+        userId: res.userId
       }))
       .catch(error => console.log(error))
     
@@ -135,8 +134,8 @@ class Input extends Component {
             <div className="wrapper">
               <section className="one navBar">
                   <div className="div-navButton" id="homeButton">
-                    {this.state.userId ?
-                      <div>
+                    { this.state.userId !== '' ?
+                      <div> 
                         <Link to="/logout"><i className="fas fa-home icon"></i></Link>
                         <p id="span-logOut">Log Out</p>
                       </div>
@@ -145,7 +144,7 @@ class Input extends Component {
                         <Link to="login"><i className="fas fa-home icon"></i></Link>
                         <p id="span-logIn">Log In</p>
                       </div>
-                    }        
+                    }
                   </div>            
                 <div className="oneFlex">
                   <div className="div-navButton">
