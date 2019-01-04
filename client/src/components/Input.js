@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import '../styles/Input.css';
 
@@ -127,18 +128,16 @@ class Input extends Component {
       <div className="wrapper">
         <section className="one navBar">
             <div className="div-navButton" id="homeButton">
-              {/* <a href='/'>Walking Bucket <i className="fas fa-basketball-ball"></i></a> */}
-              
               {this.state.userId ?
                 <div>
-                  <a href='/logout'><i className="fas fa-home icon"></i></a>
+                  <Link to="/logout"><i className="fas fa-home icon"></i></Link>
                   <p id="span-logOut">Log Out</p>
                 </div>
               :
                 <div>
-                  <a href='/login'><i className="fas fa-home icon"></i></a>
+                  <Link to="login"><i className="fas fa-home icon"></i></Link>
                   <p id="span-logIn">Log In</p>
-                </div> 
+                </div>
               }        
             </div>            
           <div className="oneFlex">
