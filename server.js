@@ -101,14 +101,15 @@ app.use('/api/auth', authRouter);
 // })
 
 app.get('/api/userId', (req, res) => {
-  res.json({ 
-    userId: req.user._id,
-    username: req.user.username
-  })
+  if (req.user_id === undefined) {
+    return console.log('No user logged in')
+  } else {
+    res.json({ 
+      userId: req.user._id,
+      username: req.user.username
+    })
+  }
 })
-
-
-
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {

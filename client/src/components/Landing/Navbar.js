@@ -6,9 +6,9 @@ class Navbar extends Component {
       <div className="wrapper-navbar">
         <div className="div-navbar">
           <div className="div-navbarGroupLeft">
-            <a href='/landing'>Features</a>
-            <a>Pricing</a>
-            <a>About</a>
+            <a href='#features'>>Features</a>
+            <a href='#pricing'>Pricing</a>
+            <a href='#about'>About</a>
           </div>
           <div className="div-navbarGroupRight">
             <a href='/landing'>Login</a>

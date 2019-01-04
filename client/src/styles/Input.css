@@ -2,6 +2,29 @@
   box-sizing: border-box;
 }
 
+/* Desktop wide breakpoint */
+@media screen and (min-width: 1366px) {
+
+}
+
+/* Tablet breakpoint */
+@media screen and (min-width: 1024px) {
+  .div-chart{
+    width: 80%;
+    height: 100px!important;
+  }
+
+  .div-chart canvas {
+    height: 100px!important;
+    width: 100%;
+  }
+}
+
+/* Mobile breakpoint */
+@media screen and (min-width: 375px) {
+
+}
+
 body {
   background-color: white;
   color: black;
@@ -183,11 +206,8 @@ a, a:hover, a:visited, a:link, a:active {
   overflow: auto;
   overflow-x: hidden;
   font-size: 1.3rem;
-  /* border: 1px solid white; */
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-start; */
-  /* align-content: flex-end; */
 }
 
 .div-logOuter {
@@ -206,8 +226,6 @@ a, a:hover, a:visited, a:link, a:active {
   color: white;
   height: 3rem;
   background-color: #FF6F66;
-  /* background-image: linear-gradient(to bottom right, #FFCD42, #FF6F66); */
-  /* background-image: linear-gradient(to bottom right, #FFCD42, ffcc14); */
   border-radius: 10px;
   width: 88%;
   margin: 3px 0;
@@ -302,13 +320,14 @@ a, a:hover, a:visited, a:link, a:active {
   line-height: 1.1rem;
 }
 
-.div-chart{
+.div-chart {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 80%;
   height: 100%;
 }
+
 /* 
 .chartjs-size-monitor {
 

@@ -129,7 +129,7 @@ class Input extends Component {
     return(
       <Consumer>
         { value => {
-          const { shotLog, userId, username } = value;
+          // const { shotLog, userId, username } = value;
           // this.setState({ shotLog:shotLog });
           return(
             <div className="wrapper">
