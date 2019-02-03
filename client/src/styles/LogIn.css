@@ -40,23 +40,33 @@ h1 {
 .div-form {
   width: 70vw;
   color: white;
+  margin-bottom: 30px;
 }
 
 .div-form input {
   font-weight: 600;
   border: none;
+  border-radius: 0;
   text-decoration: none;
-  color: white;
+  color: white;;
   background-color: transparent;
   font-size: 1.2rem;
-  width: 100%;
-  border-bottom: 2px solid #fff;
-  margin-bottom: 20px;
-  border-radius: 0;
+  margin-bottom: 3px;
+
   /* ios button styling remove */
   -webkit-appearance: none;
   -webkit-border-radius: 0;
 }
+
+.div-form i {
+  padding-right: 7px;
+}
+
+.underline {
+  border-bottom: 2px solid #fff;
+  margin-bottom: 30px;
+}
+
 
 .div-form input:focus {
   color: white;
@@ -85,7 +95,10 @@ h1 {
 .div-redirectSignUp {
   font-size: 1.1rem;
   color: #ffd0ce;
+}
 
+.inlineBlock {
+  display: inline;
 }
 
 .linkPrimary {

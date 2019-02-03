@@ -11,11 +11,11 @@ class LogIn extends Component {
           <h1>Log In</h1>
           <div className="div-form">
             <form method="POST" action="/api/auth/login">
-              <div>
+              <div className="underline">
                 <i className="fas fa-user inlineBlock"></i>
-                <input type="text" name="username" placeholder="Email" />
+                <input id="alex" type="text" name="username" placeholder="Email" className="inlineBlock"/>
               </div>
-              <div>
+              <div className="underline">
                 <i className="fas fa-unlock-alt"></i>
                 <input type="password" name="password" placeholder="Password" />
               </div>

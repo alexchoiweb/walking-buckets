@@ -7,7 +7,7 @@ class ShotLog extends Component {
   render() {
     return (
       <div className="div-shotLog">
-        {this.props.shotLog.map((log, index) =>
+        {this.props.shotLog.map((log, index) => 
           <Log
             key={index}
             log={log} />

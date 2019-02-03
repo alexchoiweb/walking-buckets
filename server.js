@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-const session = require('express-session');
+const session = require('cookie-session');
 const LocalStrategy = require('passport-local');
 const User = require('./models/User');
 // const path = require('path');
@@ -21,9 +21,9 @@ app.use(session({
   secret: 'secretySecret',
   saveUninitialized: false,
   resave: false,
-  // name:'session',
-  // maxAge: 24*60*60*1000,
-  // keys: process.env.cookieKey || [require('./config/keys').session.cookieKey],
+  name:'session',
+  maxAge: 24*60*60*1000,
+  keys: process.env.cookieKey || [require('./config/keys').session.cookieKey],
 }));
 
 // Use Passport

@@ -48,7 +48,7 @@ class Input extends Component {
   componentDidMount() {
     fetch('/api/userId')
       .then(res => res.json())
-      .then(res => this.setState({ 
+      .then(res =>  this.setState({ 
         userId: res.userId
       }))
       .catch(error => console.log(error))

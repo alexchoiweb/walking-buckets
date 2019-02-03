@@ -40,8 +40,10 @@ class Log extends Component {
       const button = document.getElementById(logId2)
       button.addEventListener('click', this.handleClick);
       button.classList.add('button-delete')
+      popUp.style.opacity = 1;
     } else {
       popUp.innerHTML = ''
+      popUp.style.opacity= 0;
     }
   }
 

@@ -305,6 +305,12 @@ a, a:hover, a:visited, a:link, a:active {
 .div-popUp {
   display: flex;
   justify-content: flex-end;
+  opacity: 0;
+
+  transition: all .2s ease-out;
+  -webkit-transition: all .2s ease-out;
+  -moz-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
 }
 
 .button-delete {

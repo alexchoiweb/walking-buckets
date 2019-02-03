@@ -49,9 +49,9 @@ h1 {
   color: white;
   background-color: transparent;
   font-size: 1.2rem;
-  width: 100%;
-  border-bottom: 2px solid #fff;
-  margin-bottom: 20px;
+  /* width: 100%; */
+  /* border-bottom: 2px solid #fff; */
+  /* margin-bottom: 20px; */
   /* ios button styling remove */
   -webkit-appearance: none;
 }

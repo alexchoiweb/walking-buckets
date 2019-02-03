@@ -11,15 +11,15 @@ class Register extends Component {
           <h1>Sign Up</h1>
           <div className="div-form">
             <form method="post" action="/api/auth/register">
-              <div>
+              <div className="underline">
                 <i className="fas fa-user inlineBlock"></i>
                 <input type="text" name="username" placeholder="Email"/>
               </div>
-              <div>
+              <div className="underline">
                 <i className="fas fa-unlock-alt"></i>
                 <input type="password" name="password" placeholder="Password"/>
               </div>
-              <div>
+              <div className="underline">
                 <i className="fas fa-unlock-alt"></i>
                 <input type="password" name="passwordConfirm" placeholder="Confirm Password"/>
               </div>
